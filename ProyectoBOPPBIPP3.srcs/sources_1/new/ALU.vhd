@@ -53,7 +53,7 @@ architecture alu_arch of ALU is
     component barrel_shifter is
     Port ( A : in STD_LOGIC_VECTOR (31 downto 0);
            B : out STD_LOGIC_VECTOR (31 downto 0);
-           SHAMT : in STD_LOGIC_VECTOR (5 downto 0);
+           SHAMT : in STD_LOGIC_VECTOR (4 downto 0);
            DIR: in STD_LOGIC_VECTOR (1 downto 0)
          );
     end component;
@@ -88,7 +88,7 @@ begin
     Port map (
         A => A,
         B => shifter_out,
-        SHAMT => B(5 downto 0),
+        SHAMT => B(4 downto 0),
         DIR => shift_direction
     );
     

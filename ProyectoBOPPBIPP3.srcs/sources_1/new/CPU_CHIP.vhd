@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -71,6 +71,11 @@ architecture cpu_arch of CPU_CHIP is
            CLK: in STD_LOGIC);
     end component;
     
+    component imm_gen is
+    Port ( DATA_IN : in STD_LOGIC_VECTOR (8 downto 0);
+           DATA_OUT : out STD_LOGIC_VECTOR (31 downto 0));
+    end component;
+    
     component ALU is
         Port ( A : in STD_LOGIC_VECTOR (31 downto 0);
                B : in STD_LOGIC_VECTOR (31 downto 0);
@@ -97,35 +102,62 @@ architecture cpu_arch of CPU_CHIP is
            CLK : in STD_LOGIC);
     end component;
     
-    -- IF - ID --
+    -- IF SIGNALS --
+    signal PC_OUT : std_logic_vector(8 downto 0);
+    
     signal INS_WORD: std_logic_vector(31 downto 0);
     
+    -- ID SIGNALS --
     signal fwFUNCT_OUT : std_logic_vector(2 downto 0);
     signal fwOP_OUT : std_logic_vector (1 downto 0);
+    
+    signal fwPCIF_OUT : std_logic_vector(9 downto 0);
     
     signal fwWADDRIF_OUT : std_logic_vector (8 downto 0);
     
     signal fwADDRA_OUT, fwADDRB_OUT, fwWADDR_OUT: std_logic_vector(8 downto 0);
-    signal fwDATA_OUT: std_logic_vector(31 downto 0);
     
-    signal fwCONTROL_IN, fwCONTROL_OUT : std_logic_vector (7 downto 0);
+    signal fwA_IN, fwB_IN : std_logic_vector (31 downto 0);
     
-    -- ID - EX --
-    signal fwA_IN, fwA_OUT, fwB_IN, fwB_OUT: std_logic_vector(31 downto 0);
+    signal fwCONTROLID_OUT : std_logic_vector (7 downto 0);
+    
+    signal IMM : std_logic_vector(8 downto 0);
+    
+    signal fwIMMGEN : std_logic_vector(31 downto 0);
+    
+    -- EX SIGNALS --
+    signal fwCONTROLEX_OUT : std_logic_vector (7 downto 0);
+    
+    signal fwIMMGEN_OUT : std_logic_vector (31 downto 0);
+    
+    signal fwPCEX_OUT : std_logic_vector(9 downto 0);
+    
+    signal fwA_OUT, fwB_OUT: std_logic_vector(31 downto 0);
+    
+    signal fwALUOUT_IN : std_logic_vector (31 downto 0);
     
     signal fwWADDRID_OUT : std_logic_vector (8 downto 0);
     
-    -- EX - MEM --
-    signal fwALUOUT_IN, fwALUOUT_OUT: std_logic_vector(31 downto 0);
+    -- MEM --
+    signal fwCONTROLMEM_OUT : std_logic_vector (8 downto 0);
+    
+    signal fwRAMADDR_OUT : std_logic_vector (31 downto 0);
+    
+    signal fwALUOUT_OUT: std_logic_vector(31 downto 0);
     signal fwFLAGS_IN, fwFLAGS_OUT: std_logic_vector(1 downto 0);
     
     signal fwWADDREX_OUT : std_logic_vector (8 downto 0);
     
     -- MEM - WB --
+    signal fwMEMORYOUT_IN, fwMEMORYOUT_OUT : std_logic_vector(31 downto 0);
+    
     signal fwWADDRMEM_OUT : std_logic_vector (8 downto 0);
     
-    -- SIGNALS --
-    signal PC_OUT : std_logic_vector(8 downto 0);
+    -- WB --
+    signal fwDATA_OUT: std_logic_vector(31 downto 0);
+    
+    -- MUXES --
+    signal A_ALU, B_ALU : std_logic_vector (31 downto 0);
 begin
 
     -- IF --
@@ -164,11 +196,11 @@ begin
         CLK => CLK
     );
     
-    fwWADDRIF: forwarding_unit
+    fwPC: forwarding_unit
     generic map ( n_bits => 9 )
     Port map (
-        DATA_IN => INS_WORD(26 downto 18),
-        DATA_OUT => fwWADDRIF_OUT,
+        DATA_IN => PC_OUT,
+        DATA_OUT => fwPCIF_OUT,
         CLK => CLK
     );
     
@@ -187,6 +219,22 @@ begin
         DATA_OUT => fwADDRB_OUT,
         CLK => CLK
     );
+    
+    fwIMM: forwarding_unit
+    generic map (n_bits => 9)
+    Port map (
+        DATA_IN => INS_WORD(8 downto 0),
+        DATA_OUT => IMM,
+        CLK => CLK
+    );
+    
+    fwWADDRIF: forwarding_unit
+    generic map ( n_bits => 9 )
+    Port map (
+        DATA_IN => INS_WORD(26 downto 18),
+        DATA_OUT => fwWADDRIF_OUT,
+        CLK => CLK
+    );
 
     -- ID --
     
@@ -194,12 +242,12 @@ begin
     Port map (
         OPCODE => fwOP_OUT,
         FUNCT => fwFUNCT_OUT,
-        CONTROL => fwCONTROL_IN
+        CONTROL => fwCONTROLID_OUT
     );
 
     regs: dualr_bank
     Port map(
-        DATA_IN => fwDATA_OUT,
+        DATA_IN => fwDATA_OUT, -- PLACEHOLDER --
         BUS_A => fwA_IN,
         BUS_B => fwB_IN,
         ADDR_A => fwADDRA_OUT,
@@ -209,12 +257,18 @@ begin
         CLK => CLK
     );
     
+    immgen: imm_gen
+    Port map (
+        DATA_IN => IMM,
+        DATA_OUT => fwIMMGEN
+    );
+    
     -- FORWARD CONTROL UNIT --
     fwCU_CONTROL: forwarding_unit
-    generic map ( n_bits => 2 )
+    generic map ( n_bits => 8 )
     Port map (
-        DATA_IN => fwCONTROL_IN,
-        DATA_OUT => fwCONTROL_OUT,
+        DATA_IN => fwCONTROLID_OUT,
+        DATA_OUT => fwCONTROLEX_OUT,
         CLK => CLK
     );
     
@@ -244,18 +298,44 @@ begin
         CLK => CLK
     );
     
+    -- FORWARD IMMEDIATE GENERATOR --
+    fwIMMGENERATOR: forwarding_unit
+    generic map ( n_bits => 32 )
+    Port map (
+        DATA_IN => fwIMMGEN,
+        DATA_OUT => fwIMMGEN_OUT,
+        CLK => CLK
+    );
+    
     -- ID --
     
     -- EX --
+    
+    with fwCONTROLEX_OUT(6) select
+        A_ALU <= fwA_OUT when '0',
+                 std_logic_vector(resize(unsigned(fwPCEX_OUT), 32)) when others;
+    
+    with fwCONTROLEX_OUT(3) select
+        B_ALU <= fwB_OUT when '0',
+                 fwIMMGEN_OUT when others;
 
     core: ALU
     Port map (
-        A => fwA_OUT,
-        B => fwB_OUT,
-        OP => fwCONTROL_OUT(2 downto 0),
+        A => A_ALU,
+        B => B_ALU,
+        OP => fwCONTROLEX_OUT(2 downto 0),
         O => fwALUOUT_IN,
         flag_zero => fwFLAGS_IN(0),
         flag_overflow => fwFLAGS_IN(1)
+    );
+    
+    -- FORWARD CONTROL UNIT --
+    fwCUEX: forwarding_unit
+    generic map (n_bits => 8)
+    Port map (
+        DATA_IN => fwCONTROLEX_OUT,
+        DATA_OUT => fwCONTROLMEM_OUT,
+        CLK => CLK
     );
     
     -- FORWARD ALU OUTPUT --
@@ -275,6 +355,14 @@ begin
         CLK => CLK
     );
     
+    fwBOUT: forwarding_unit
+    generic map ( n_bits => 32)
+    Port map (
+        DATA_IN => fwB_OUT,
+        DATA_OUT => fwRAMADDR_OUT,
+        CLK => CLK
+    );
+    
     -- FORWARD WRITEBACK ADDRESS --
     fwWADDREX: forwarding_unit
     generic map ( n_bits => 9 )
@@ -287,6 +375,16 @@ begin
     -- EX --
     
     -- MEM --
+    
+    ram: bram_memory
+    Port map (
+        DATA_IN => fwALUOUT_OUT,
+        DATA_OUT => fwMEMORYOUT_IN,
+        ADDR => fwRAMADDR_OUT,
+        ENABLE => ISTR_PORT,
+        WE => fwCONTROLMEM_OUT(5),
+        CLK => CLK
+    );
     
     -- FORWARD WRITEBACK ADDRESS --
     fwWADDRMEM: forwarding_unit

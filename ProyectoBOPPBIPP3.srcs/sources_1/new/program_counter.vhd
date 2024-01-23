@@ -45,10 +45,10 @@ begin
     with MOD_PC select
         MUX_OUT <= SET_ADDR when '1',
                    std_logic_vector(unsigned(PC_REG) + 1) when others;
-    SYNC: process (ENABLE,CLK)
+    SYNC: process (CLK)
     begin
-        if ENABLE = '1' then
-            if rising_edge(CLK) then
+        if rising_edge(CLK) then
+            if ENABLE = '1' then
                 PC_REG <= MUX_OUT;
             end if;
         end if;

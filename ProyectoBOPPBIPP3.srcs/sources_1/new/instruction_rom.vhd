@@ -40,12 +40,12 @@ end instruction_rom;
 
 architecture im_arch of instruction_rom is
     type reg_bank is array(511 downto 0) of std_logic_vector(31 downto 0);
-    signal regs: reg_bank;
+    signal regs: reg_bank := (others => (others => '0'));
 begin
-    READ: process (ENABLE,CLK)
-    begin
-        if ENABLE = '1' then
-            if rising_edge(CLK) then
+    READ: process (CLK)
+    begin 
+        if rising_edge(CLK) then
+            if ENABLE = '1' then
                 INS_OUT <= regs(to_integer(unsigned(ADDR)));
             end if;
         end if;

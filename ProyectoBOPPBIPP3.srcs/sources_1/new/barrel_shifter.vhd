@@ -35,7 +35,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity barrel_shifter is
     Port ( A : in STD_LOGIC_VECTOR (31 downto 0);
            B : out STD_LOGIC_VECTOR (31 downto 0);
-           SHAMT : in STD_LOGIC_VECTOR (5 downto 0);
+           SHAMT : in STD_LOGIC_VECTOR (4 downto 0);
            DIR: in STD_LOGIC_VECTOR (1 downto 0)
            );
 end barrel_shifter;

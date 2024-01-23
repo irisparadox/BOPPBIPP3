@@ -41,23 +41,26 @@ entity bram_memory is
 end bram_memory;
 
 architecture bram_arch of bram_memory is
-    type bytes is array(3 downto 0) of std_logic_vector(7 downto 0);
-    type memory_blocks is array(2**30 - 1 downto 0) of bytes;
+    type bytes is array(0 to 3) of std_logic_vector(7 downto 0);
+    type memory_blocks is array(15 downto 0) of bytes;
     
-    signal memory : memory_blocks := (others => (others => "0"));
+    signal memory : memory_blocks := (others => (others => (others => '0')));
     signal b0, b1, b2, b3: std_logic_vector(7 downto 0) := (others => '0');
 begin
-    SYNC: process (CLK, ENABLE)
+    SYNC: process (CLK)
     begin
-        if ENABLE = '1' then
-            if rising_edge(CLK) then
+        if rising_edge(CLK) then
+            if ENABLE = '1' then
                 if WE = '1' then
-                    memory(to_integer(unsigned(ADDR(31 downto 2)))) <= (others => DATA_IN);
+                    memory(to_integer(unsigned(ADDR(8 downto 2))))(0) <= DATA_IN(7 downto 0);
+                    memory(to_integer(unsigned(ADDR(8 downto 2))))(1) <= DATA_IN(15 downto 8);
+                    memory(to_integer(unsigned(ADDR(8 downto 2))))(2) <= DATA_IN(23 downto 16);
+                    memory(to_integer(unsigned(ADDR(8 downto 2))))(3) <= DATA_IN(31 downto 24);
                 else
-                    b0 <= memory(to_integer(unsigned(ADDR(31 downto 2))))(to_integer(unsigned(ADDR(1 downto 0))));
-                    b1 <= memory(to_integer(unsigned(ADDR(31 downto 2))))(to_integer(unsigned(ADDR(1 downto 0)))+1);
-                    b2 <= memory(to_integer(unsigned(ADDR(31 downto 2))))(to_integer(unsigned(ADDR(1 downto 0)))+2);
-                    b3 <= memory(to_integer(unsigned(ADDR(31 downto 2))))(to_integer(unsigned(ADDR(1 downto 0)))+3);
+                    b0 <= memory(to_integer(unsigned(ADDR(8 downto 2))))(0);
+                    b1 <= memory(to_integer(unsigned(ADDR(8 downto 2))))(1);
+                    b2 <= memory(to_integer(unsigned(ADDR(8 downto 2))))(2);
+                    b3 <= memory(to_integer(unsigned(ADDR(8 downto 2))))(3);
                 end if;
             end if;
         end if;

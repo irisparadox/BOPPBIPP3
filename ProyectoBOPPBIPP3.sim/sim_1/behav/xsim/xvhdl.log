@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/reg_bank.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'dualr_bank'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/instruction_rom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'instruction_rom'

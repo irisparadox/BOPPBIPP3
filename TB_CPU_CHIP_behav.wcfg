@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="78.263 ns"></ZoomStartTime>
-      <ZoomEndTime time="415.716 ns"></ZoomEndTime>
-      <Cursor1Time time="911.597 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,600.001 ns"></ZoomEndTime>
+      <Cursor1Time time="1,600.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="336"></NameColumnWidth>
       <ValueColumnWidth column_width="151"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="19" />
+   <WVObjectSize size="8" />
    <wvobject fp_name="/TB_CPU_CHIP/ISTR_PORT_sig" type="logic">
       <obj_property name="ElementShortName">ISTR_PORT_sig</obj_property>
       <obj_property name="ObjectShortName">ISTR_PORT_sig</obj_property>
@@ -47,52 +47,9 @@
       <obj_property name="ElementShortName">regs[35:0][31:0]</obj_property>
       <obj_property name="ObjectShortName">regs[35:0][31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/TB_CPU_CHIP/DUT/core/O" type="array">
-      <obj_property name="ElementShortName">O[31:0]</obj_property>
-      <obj_property name="ObjectShortName">O[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TB_CPU_CHIP/DUT/core/A" type="array">
-      <obj_property name="ElementShortName">A[31:0]</obj_property>
-      <obj_property name="ObjectShortName">A[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TB_CPU_CHIP/DUT/core/B" type="array">
-      <obj_property name="ElementShortName">B[31:0]</obj_property>
-      <obj_property name="ObjectShortName">B[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TB_CPU_CHIP/DUT/fwALUO/DATA_OUT" type="array">
-      <obj_property name="ElementShortName">DATA_OUT[31:0]</obj_property>
-      <obj_property name="ObjectShortName">DATA_OUT[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TB_CPU_CHIP/DUT/fwALUMEM/DATA_OUT" type="array">
-      <obj_property name="ElementShortName">DATA_OUT[31:0]</obj_property>
-      <obj_property name="ObjectShortName">DATA_OUT[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TB_CPU_CHIP/DUT/regs/WE" type="logic">
-      <obj_property name="ElementShortName">WE</obj_property>
-      <obj_property name="ObjectShortName">WE</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TB_CPU_CHIP/DUT/regs/DATA_IN" type="array">
-      <obj_property name="ElementShortName">DATA_IN[31:0]</obj_property>
-      <obj_property name="ObjectShortName">DATA_IN[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TB_CPU_CHIP/DUT/regs/WADDR" type="array">
-      <obj_property name="ElementShortName">WADDR[8:0]</obj_property>
-      <obj_property name="ObjectShortName">WADDR[8:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TB_CPU_CHIP/DUT/regs/ADDR_A" type="array">
-      <obj_property name="ElementShortName">ADDR_A[8:0]</obj_property>
-      <obj_property name="ObjectShortName">ADDR_A[8:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TB_CPU_CHIP/DUT/regs/ADDR_B" type="array">
-      <obj_property name="ElementShortName">ADDR_B[8:0]</obj_property>
-      <obj_property name="ObjectShortName">ADDR_B[8:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TB_CPU_CHIP/DUT/regs/BUS_A" type="array">
-      <obj_property name="ElementShortName">BUS_A[31:0]</obj_property>
-      <obj_property name="ObjectShortName">BUS_A[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/TB_CPU_CHIP/DUT/regs/BUS_B" type="array">
-      <obj_property name="ElementShortName">BUS_B[31:0]</obj_property>
-      <obj_property name="ObjectShortName">BUS_B[31:0]</obj_property>
+   <wvobject fp_name="/TB_CPU_CHIP/DUT/ram/memory" type="array">
+      <obj_property name="ElementShortName">memory[15:0][0:3][7:0]</obj_property>
+      <obj_property name="ObjectShortName">memory[15:0][0:3][7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

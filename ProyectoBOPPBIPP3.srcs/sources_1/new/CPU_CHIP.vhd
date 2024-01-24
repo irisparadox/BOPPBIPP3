@@ -33,8 +33,8 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity CPU_CHIP is
     Port ( ISTR_PORT : in STD_LOGIC;
-           INS_BUS : out STD_LOGIC_VECTOR (31 downto 0);
-           OBUS_PORT : out STD_LOGIC_VECTOR (31 downto 0);
+           INS_BUS : out STD_LOGIC_VECTOR (4 downto 0);
+           OBUS_PORT : out STD_LOGIC_VECTOR (10 downto 0);
            CLK : in STD_LOGIC);
 end CPU_CHIP;
 
@@ -104,68 +104,70 @@ architecture cpu_arch of CPU_CHIP is
     end component;
     
     -- IF SIGNALS --
-    signal PC_OUT : std_logic_vector(8 downto 0);
+    signal PC_OUT : std_logic_vector(8 downto 0) := (others => '0');
     
-    signal INS_WORD: std_logic_vector(31 downto 0);
+    signal INS_WORD: std_logic_vector(31 downto 0) := (others => '0');
     
     -- ID SIGNALS --
-    signal fwFUNCT_OUT : std_logic_vector(2 downto 0);
-    signal fwOP_OUT : std_logic_vector (1 downto 0);
+    signal fwFUNCT_OUT : std_logic_vector(2 downto 0) := (others => '0');
+    signal fwOP_OUT : std_logic_vector (1 downto 0) := (others => '0');
     
-    signal fwPCIF_OUT : std_logic_vector(9 downto 0);
+    signal fwPCIF_OUT : std_logic_vector(8 downto 0) := (others => '0');
     
-    signal fwWADDRIF_OUT : std_logic_vector (8 downto 0);
+    signal fwWADDRIF_OUT : std_logic_vector (8 downto 0) := (others => '0');
     
-    signal fwADDRA_OUT, fwADDRB_OUT : std_logic_vector(8 downto 0);
+    signal fwADDRA_OUT, fwADDRB_OUT : std_logic_vector(8 downto 0) := (others => '0');
     
-    signal fwA_IN, fwB_IN : std_logic_vector (31 downto 0);
+    signal fwA_IN, fwB_IN : std_logic_vector (31 downto 0) := (others => '0');
     
-    signal fwCONTROLID_OUT : std_logic_vector (7 downto 0);
+    signal fwCONTROLID_OUT : std_logic_vector (7 downto 0) := (others => '0');
     
-    signal IMM : std_logic_vector(8 downto 0);
+    signal IMM : std_logic_vector(8 downto 0) := (others => '0');
     
-    signal fwIMMGEN : std_logic_vector(31 downto 0);
+    signal fwIMMGEN : std_logic_vector(31 downto 0) := (others => '0');
     
     -- EX SIGNALS --
-    signal fwCONTROLEX_OUT : std_logic_vector (7 downto 0);
+    signal fwCONTROLEX_OUT : std_logic_vector (7 downto 0) := (others => '0');
     
-    signal fwIMMGEN_OUT : std_logic_vector (31 downto 0);
+    signal fwIMMGEN_OUT : std_logic_vector (31 downto 0) := (others => '0');
     
-    signal fwPCEX_OUT : std_logic_vector(9 downto 0);
+    signal fwPCEX_OUT : std_logic_vector(8 downto 0) := (others => '0');
     
-    signal fwA_OUT, fwB_OUT: std_logic_vector(31 downto 0);
+    signal fwA_OUT, fwB_OUT: std_logic_vector(31 downto 0) := (others => '0');
     
-    signal fwALUOUT_IN : std_logic_vector (31 downto 0);
+    signal fwALUOUT_IN : std_logic_vector (31 downto 0) := (others => '0');
     
-    signal fwFLAGS_IN : std_logic_vector(1 downto 0);
+    signal fwFLAGS_IN : std_logic_vector(1 downto 0) := (others => '0');
     
-    signal fwWADDRID_OUT : std_logic_vector (8 downto 0);
+    signal fwWADDRID_OUT : std_logic_vector (8 downto 0) := (others => '0');
     
     -- MEM SIGNALS --
-    signal fwCONTROLMEM_OUT : std_logic_vector (8 downto 0);
+    signal fwCONTROLMEM_OUT : std_logic_vector (7 downto 0) := (others => '0');
     
-    signal fwRAMADDR_OUT : std_logic_vector (31 downto 0);
+    signal fwRAMADDR_OUT : std_logic_vector (31 downto 0) := (others => '0');
     
-    signal fwALUOUT_OUT: std_logic_vector(31 downto 0);
-    signal fwFLAGS_OUT: std_logic_vector(1 downto 0);
+    signal fwALUOUT_OUT: std_logic_vector(31 downto 0) := (others => '0');
+    signal fwFLAGS_OUT: std_logic_vector(1 downto 0) := (others => '0');
     
-    signal fwWADDREX_OUT : std_logic_vector (8 downto 0);
+    signal fwWADDREX_OUT : std_logic_vector (8 downto 0) := (others => '0');
     
-    signal fwMEMORYOUT_IN : std_logic_vector(31 downto 0);
+    signal fwMEMORYOUT_IN : std_logic_vector(31 downto 0) := (others => '0');
     
-    signal fwWADDRMEM_OUT : std_logic_vector (8 downto 0);
+    signal fwWADDRMEM_OUT : std_logic_vector (8 downto 0) := (others => '0');
     
     -- WB SIGNALS --
-    signal fwMEMORYOUT_OUT, fwALUWB_OUT : std_logic_vector(31 downto 0);
-    signal fwCONTROLWB_OUT : std_logic_vector(7 downto 0);
+    signal fwMEMORYOUT_OUT, fwALUWB_OUT : std_logic_vector(31 downto 0) := (others => '0');
+    signal fwCONTROLWB_OUT : std_logic_vector(7 downto 0) := (others => '0');
     
-    signal fwWADDR_OUT: std_logic_vector(8 downto 0);
+    signal fwWADDR_OUT: std_logic_vector(8 downto 0) := (others => '0');
     
     -- MUXES --
-    signal A_ALU, B_ALU : std_logic_vector (31 downto 0);
+    signal A_ALU, B_ALU : std_logic_vector (31 downto 0) := (others => '0');
     
-    signal DATA_OUT: std_logic_vector(31 downto 0);
+    signal DATA_OUT: std_logic_vector(31 downto 0) := (others => '0');
 begin
+    INS_BUS <= INS_WORD(31 downto 27);
+    OBUS_PORT <= DATA_OUT(10 downto 0);
 
     -- IF --
     
@@ -196,7 +198,7 @@ begin
     );
     
     fwFUNCT: forwarding_unit
-    generic map ( n_bits => 2 )
+    generic map ( n_bits => 3 )
     Port map (
         DATA_IN => INS_WORD(29 downto 27),
         DATA_OUT => fwFUNCT_OUT,

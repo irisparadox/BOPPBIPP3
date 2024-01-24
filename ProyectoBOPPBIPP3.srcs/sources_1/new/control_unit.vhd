@@ -80,8 +80,9 @@ begin
                         LW_MEM <= '1';
                     when "011" =>
                         SW_MEM <= '1';
+                    when others =>
                 end case;
-            when "11" =>
+            when others =>
                 USE_IMM <= '0';
                 MOD_PC <= '1';                     
         end case;

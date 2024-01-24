@@ -61,7 +61,7 @@ architecture alu_arch of ALU is
     -- Control signals
     signal sub_enable: std_logic;
     signal shift_direction: std_logic_vector(1 downto 0);
-    signal zero: std_logic_vector(31 downto 0) := (others => '0');
+    constant zero: std_logic_vector(31 downto 0) := (others => '0');
     
     -- Output signals
     signal adder_sub_out: std_logic_vector(31 downto 0);

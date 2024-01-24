@@ -39,7 +39,7 @@ entity instruction_rom is
 end instruction_rom;
 
 architecture im_arch of instruction_rom is
-    type reg_bank is array(511 downto 0) of std_logic_vector(31 downto 0);
+    type reg_bank is array(63 downto 0) of std_logic_vector(31 downto 0);
     signal regs: reg_bank := (others => (others => '0'));
 begin
     READ: process (CLK)
@@ -58,6 +58,6 @@ begin
     -- 3 : addi t3, t2, 4       [0x40401E04]
     regs(0) <= "10000000001101000000000000001010";
     regs(1) <= "10000000001110000000000000011001";
-    regs(2) <= "00000000001111000001101000001110";
-    regs(3) <= "01000000010000000001111000000100";
+    regs(7) <= "00000000001111000001101000001110";
+    regs(13) <= "01000000010000000001111000000100";
 end im_arch;

@@ -59,6 +59,7 @@ begin
     WE_WB <= '0';
     SW_MEM <= '0';
     MOD_PC <= '0';
+    LW_MEM <= '0';
     COMB: process(OPCODE, FUNCT)
     begin
         case OPCODE is
@@ -76,7 +77,7 @@ begin
                         USE_IMM <= '1';
                         MOD_PC <= '1';
                     when "010" =>
-                        SW_MEM <= '0';
+                        LW_MEM <= '1';
                     when "011" =>
                         SW_MEM <= '1';
                 end case;

@@ -33,7 +33,8 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity CPU_CHIP is
     Port ( ISTR_PORT : in STD_LOGIC;
-           OBUS_PORT : out STD_LOGIC_VECTOR (0 downto 0);
+           INS_BUS : out STD_LOGIC_VECTOR (31 downto 0);
+           OBUS_PORT : out STD_LOGIC_VECTOR (31 downto 0);
            CLK : in STD_LOGIC);
 end CPU_CHIP;
 
@@ -115,7 +116,7 @@ architecture cpu_arch of CPU_CHIP is
     
     signal fwWADDRIF_OUT : std_logic_vector (8 downto 0);
     
-    signal fwADDRA_OUT, fwADDRB_OUT, fwWADDR_OUT: std_logic_vector(8 downto 0);
+    signal fwADDRA_OUT, fwADDRB_OUT : std_logic_vector(8 downto 0);
     
     signal fwA_IN, fwB_IN : std_logic_vector (31 downto 0);
     
@@ -136,36 +137,42 @@ architecture cpu_arch of CPU_CHIP is
     
     signal fwALUOUT_IN : std_logic_vector (31 downto 0);
     
+    signal fwFLAGS_IN : std_logic_vector(1 downto 0);
+    
     signal fwWADDRID_OUT : std_logic_vector (8 downto 0);
     
-    -- MEM --
+    -- MEM SIGNALS --
     signal fwCONTROLMEM_OUT : std_logic_vector (8 downto 0);
     
     signal fwRAMADDR_OUT : std_logic_vector (31 downto 0);
     
     signal fwALUOUT_OUT: std_logic_vector(31 downto 0);
-    signal fwFLAGS_IN, fwFLAGS_OUT: std_logic_vector(1 downto 0);
+    signal fwFLAGS_OUT: std_logic_vector(1 downto 0);
     
     signal fwWADDREX_OUT : std_logic_vector (8 downto 0);
     
-    -- MEM - WB --
-    signal fwMEMORYOUT_IN, fwMEMORYOUT_OUT : std_logic_vector(31 downto 0);
+    signal fwMEMORYOUT_IN : std_logic_vector(31 downto 0);
     
     signal fwWADDRMEM_OUT : std_logic_vector (8 downto 0);
     
-    -- WB --
-    signal fwDATA_OUT: std_logic_vector(31 downto 0);
+    -- WB SIGNALS --
+    signal fwMEMORYOUT_OUT, fwALUWB_OUT : std_logic_vector(31 downto 0);
+    signal fwCONTROLWB_OUT : std_logic_vector(7 downto 0);
+    
+    signal fwWADDR_OUT: std_logic_vector(8 downto 0);
     
     -- MUXES --
     signal A_ALU, B_ALU : std_logic_vector (31 downto 0);
+    
+    signal DATA_OUT: std_logic_vector(31 downto 0);
 begin
 
     -- IF --
     
     pc: program_counter
     Port map (
-        SET_ADDR => "000000000", -- PLACEHOLDER --
-        MOD_PC => '0', -- PLACEHOLDER --
+        SET_ADDR => fwALUOUT_OUT(8 downto 0),
+        MOD_PC => fwCONTROLMEM_OUT(6),
         ENABLE => ISTR_PORT,
         CLK => CLK,
         PC_ADDR => PC_OUT
@@ -247,13 +254,13 @@ begin
 
     regs: dualr_bank
     Port map(
-        DATA_IN => fwDATA_OUT, -- PLACEHOLDER --
+        DATA_IN => DATA_OUT,
         BUS_A => fwA_IN,
         BUS_B => fwB_IN,
         ADDR_A => fwADDRA_OUT,
         ADDR_B => fwADDRB_OUT,
         WADDR => fwWADDR_OUT,
-        WE => '0', -- PLACEHOLDER BIT --
+        WE => fwCONTROLWB_OUT(4), 
         CLK => CLK
     );
     
@@ -386,6 +393,30 @@ begin
         CLK => CLK
     );
     
+    fwMEM: forwarding_unit
+    generic map (n_bits => 32)
+    Port map (
+        DATA_IN => fwMEMORYOUT_IN,
+        DATA_OUT => fwMEMORYOUT_OUT,
+        CLK => CLK
+    );
+    
+    fwCONTROLMEM: forwarding_unit
+    generic map (n_bits => 8)
+    Port map (
+        DATA_IN => fwCONTROLMEM_OUT,
+        DATA_OUT => fwCONTROLWB_OUT,
+        CLK => CLK
+    );
+    
+    fwALUMEM: forwarding_unit
+    generic map (n_bits => 32)
+    Port map (
+        DATA_IN => fwALUOUT_OUT,
+        DATA_OUT => fwALUWB_OUT,
+        CLK => CLK
+    );
+    
     -- FORWARD WRITEBACK ADDRESS --
     fwWADDRMEM: forwarding_unit
     generic map ( n_bits => 9 )
@@ -396,5 +427,10 @@ begin
     );
     
     -- MEM --
+    
+    -- WB --
+    with fwCONTROLWB_OUT(7) select
+        DATA_OUT <= fwMEMORYOUT_OUT when '1',
+                    fwALUWB_OUT when others;
 
 end cpu_arch;

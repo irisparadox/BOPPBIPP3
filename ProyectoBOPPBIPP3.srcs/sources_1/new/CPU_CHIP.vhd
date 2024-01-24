@@ -100,6 +100,7 @@ architecture cpu_arch of CPU_CHIP is
     generic ( n_bits : integer := 32);
     Port ( DATA_IN : in STD_LOGIC_VECTOR (n_bits - 1 downto 0);
            DATA_OUT : out STD_LOGIC_VECTOR (n_bits - 1 downto 0);
+           ENABLE : in STD_LOGIC;
            CLK : in STD_LOGIC);
     end component;
     
@@ -194,6 +195,7 @@ begin
     Port map (
         DATA_IN => INS_WORD(31 downto 30),
         DATA_OUT => fwOP_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -202,6 +204,7 @@ begin
     Port map (
         DATA_IN => INS_WORD(29 downto 27),
         DATA_OUT => fwFUNCT_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -210,6 +213,7 @@ begin
     Port map (
         DATA_IN => PC_OUT,
         DATA_OUT => fwPCIF_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -218,6 +222,7 @@ begin
     Port map (
         DATA_IN => INS_WORD(17 downto 9),
         DATA_OUT => fwADDRA_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -226,6 +231,7 @@ begin
     Port map (
         DATA_IN => INS_WORD(8 downto 0),
         DATA_OUT => fwADDRB_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -234,6 +240,7 @@ begin
     Port map (
         DATA_IN => INS_WORD(8 downto 0),
         DATA_OUT => IMM,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -242,6 +249,7 @@ begin
     Port map (
         DATA_IN => INS_WORD(26 downto 18),
         DATA_OUT => fwWADDRIF_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
 
@@ -278,6 +286,7 @@ begin
     Port map (
         DATA_IN => fwCONTROLID_OUT,
         DATA_OUT => fwCONTROLEX_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -287,6 +296,7 @@ begin
     Port map (
         DATA_IN => fwA_IN,
         DATA_OUT => fwA_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -295,6 +305,7 @@ begin
     Port map (
         DATA_IN => fwB_IN,
         DATA_OUT => fwB_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -304,6 +315,7 @@ begin
     Port map (
         DATA_IN => fwWADDRIF_OUT,
         DATA_OUT => fwWADDRID_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -313,6 +325,7 @@ begin
     Port map (
         DATA_IN => fwIMMGEN,
         DATA_OUT => fwIMMGEN_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -344,6 +357,7 @@ begin
     Port map (
         DATA_IN => fwCONTROLEX_OUT,
         DATA_OUT => fwCONTROLMEM_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -353,6 +367,7 @@ begin
     Port map (
         DATA_IN => fwALUOUT_IN,
         DATA_OUT => fwALUOUT_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -361,6 +376,7 @@ begin
     Port map (
         DATA_IN => fwFLAGS_IN,
         DATA_OUT => fwFLAGS_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -369,6 +385,7 @@ begin
     Port map (
         DATA_IN => fwB_OUT,
         DATA_OUT => fwRAMADDR_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -378,6 +395,7 @@ begin
     Port map (
         DATA_IN => fwWADDRID_OUT,
         DATA_OUT => fwWADDREX_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -400,6 +418,7 @@ begin
     Port map (
         DATA_IN => fwMEMORYOUT_IN,
         DATA_OUT => fwMEMORYOUT_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -408,6 +427,7 @@ begin
     Port map (
         DATA_IN => fwCONTROLMEM_OUT,
         DATA_OUT => fwCONTROLWB_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -416,6 +436,7 @@ begin
     Port map (
         DATA_IN => fwALUOUT_OUT,
         DATA_OUT => fwALUWB_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     
@@ -425,6 +446,7 @@ begin
     Port map (
         DATA_IN => fwWADDREX_OUT,
         DATA_OUT => fwWADDR_OUT,
+        ENABLE => ISTR_PORT,
         CLK => CLK
     );
     

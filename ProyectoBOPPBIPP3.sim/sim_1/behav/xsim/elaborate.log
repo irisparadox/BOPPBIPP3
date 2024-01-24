@@ -5,4 +5,29 @@ Running: D:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.numeric_std
+Compiling architecture pc_arch of entity xil_defaultlib.program_counter [program_counter_default]
+Compiling architecture im_arch of entity xil_defaultlib.instruction_rom [instruction_rom_default]
+Compiling architecture fwu_arch of entity xil_defaultlib.forwarding_unit [\forwarding_unit(n_bits=2)\]
+Compiling architecture fwu_arch of entity xil_defaultlib.forwarding_unit [\forwarding_unit(n_bits=3)\]
+Compiling architecture fwu_arch of entity xil_defaultlib.forwarding_unit [\forwarding_unit(n_bits=9)\]
+Compiling architecture cu_arch of entity xil_defaultlib.control_unit [control_unit_default]
+Compiling architecture bank_arch of entity xil_defaultlib.dualr_bank [dualr_bank_default]
+Compiling architecture img_atch of entity xil_defaultlib.imm_gen [imm_gen_default]
+Compiling architecture fwu_arch of entity xil_defaultlib.forwarding_unit [\forwarding_unit(n_bits=8)\]
+Compiling architecture fwu_arch of entity xil_defaultlib.forwarding_unit [forwarding_unit_default]
+Compiling architecture addsub_arch of entity xil_defaultlib.adder_sub [adder_sub_default]
+Compiling architecture bs_arch of entity xil_defaultlib.barrel_shifter [barrel_shifter_default]
+Compiling architecture alu_arch of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture bram_arch of entity xil_defaultlib.bram_memory [bram_memory_default]
+Compiling architecture cpu_arch of entity xil_defaultlib.CPU_CHIP [cpu_chip_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_cpu_chip
+Built simulation snapshot TB_CPU_CHIP_behav

@@ -37,7 +37,7 @@ entity imm_gen is
 end imm_gen;
 
 architecture img_atch of imm_gen is
-    signal aux : std_logic_vector(31 downto 0);
+    signal aux : std_logic_vector(31 downto 0) := (others => '0');
 begin
     DATA_OUT <= std_logic_vector(resize(signed(DATA_IN),32));
 end img_atch;

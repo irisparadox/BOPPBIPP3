@@ -60,12 +60,14 @@ architecture bank_arch of dualr_bank is
     -- sp: std_logic_vector(31 downto 0);
     
     -- Output signals
-    signal reg_outA: std_logic_vector(31 downto 0);
-    signal reg_outB: std_logic_vector(31 downto 0);
+    signal reg_outA: std_logic_vector(31 downto 0) := (others => '0');
+    signal reg_outB: std_logic_vector(31 downto 0) := (others => '0');
     
     type registerBank is array(35 downto 0) of std_logic_vector(31 downto 0);
-    signal regs: registerBank;
+    signal regs: registerBank := (others => (others => '0'));
 begin
+    BUS_A <= regs(to_integer(unsigned(ADDR_A)));
+    BUS_B <= regs(to_integer(unsigned(ADDR_B)));
     SYNC: process(CLK)
     begin
         if rising_edge(CLK) then
@@ -74,10 +76,7 @@ begin
                     regs(to_integer(unsigned(WADDR))) <= (others => '0');
                 else
                     regs(to_integer(unsigned(WADDR))) <= DATA_IN;
-                end if;
-            else
-                BUS_A <= regs(to_integer(unsigned(ADDR_A)));
-                BUS_B <= regs(to_integer(unsigned(ADDR_B)));
+                end if; 
             end if;
         end if;
     end process;

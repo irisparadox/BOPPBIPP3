@@ -9,8 +9,8 @@ end TB_CPU_CHIP;
 architecture Behavioral of TB_CPU_CHIP is
     signal ISTR_PORT_sig : STD_LOGIC := '0';
     signal CLK_sig : STD_LOGIC := '0';
-    signal INS_BUS_sig : STD_LOGIC_VECTOR(4 downto 0);
-    signal OBUS_PORT_sig : STD_LOGIC_VECTOR(10 downto 0);
+    signal INS_BUS_sig : STD_LOGIC_VECTOR(4 downto 0) := (others => '0');
+    signal OBUS_PORT_sig : STD_LOGIC_VECTOR(10 downto 0) := (others => '0');
 
     constant CLOCK_PERIOD : time := 50 ns; -- Ajusta según tus necesidades
 
@@ -47,7 +47,7 @@ begin
     Initial_condition_process: process
     begin
         ISTR_PORT_sig <= '0';
-        wait for 100 ms;
+        wait for 100 ns;
         ISTR_PORT_sig <= '1';
         wait;
     end process;

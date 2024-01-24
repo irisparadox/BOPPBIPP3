@@ -41,9 +41,9 @@ entity adder_sub is
 end adder_sub;
 
 architecture addsub_arch of adder_sub is
-    signal tempOut: STD_LOGIC_VECTOR(32 downto 0);
-    signal B_Signal: STD_LOGIC_VECTOR(31 downto 0);
-    signal Cin_Signal: STD_LOGIC;
+    signal tempOut: STD_LOGIC_VECTOR(32 downto 0) := (others => '0');
+    signal B_Signal: STD_LOGIC_VECTOR(31 downto 0) := (others => '0');
+    signal Cin_Signal: STD_LOGIC := '0';
 begin
     -- Negative 1s complement of B when sub signal is activated on ALU
     with OP select

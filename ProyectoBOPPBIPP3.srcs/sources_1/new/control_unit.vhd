@@ -45,7 +45,7 @@ architecture cu_arch of control_unit is
     -- SW_MEM
     -- MOD_PC
     
-    signal control_aux: std_logic_vector(7 downto 0);
+    signal control_aux: std_logic_vector(7 downto 0) := (others => '0');
     alias ALU_OP: std_logic_vector is control_aux(2 downto 0);
     alias USE_IMM: std_logic is control_aux(3);
     alias WE_WB: std_logic is control_aux(4);
@@ -54,20 +54,22 @@ architecture cu_arch of control_unit is
     alias LW_MEM: std_logic is control_aux(7);
 begin
     CONTROL <= control_aux;
-    ALU_OP <= "000";
-    USE_IMM <= '0';
-    WE_WB <= '0';
-    SW_MEM <= '0';
-    MOD_PC <= '0';
-    LW_MEM <= '0';
     COMB: process(OPCODE, FUNCT)
     begin
+        ALU_OP <= "000";
+        USE_IMM <= '0';
+        WE_WB <= '0';
+        SW_MEM <= '0';
+        MOD_PC <= '0';
+        LW_MEM <= '0';
         case OPCODE is
             when "00" =>
                 ALU_OP <= FUNCT;
+                WE_WB <= '1';
             when "01" =>
                 ALU_OP <= FUNCT;
                 USE_IMM <= '1';
+                WE_WB <= '1';
             when "10" =>
                 case FUNCT is
                     when "000" =>
@@ -77,6 +79,7 @@ begin
                         USE_IMM <= '1';
                         MOD_PC <= '1';
                     when "010" =>
+                        WE_WB <= '1';
                         LW_MEM <= '1';
                     when "011" =>
                         SW_MEM <= '1';

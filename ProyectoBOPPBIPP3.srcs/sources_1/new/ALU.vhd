@@ -59,17 +59,17 @@ architecture alu_arch of ALU is
     end component;
     
     -- Control signals
-    signal sub_enable: std_logic;
-    signal shift_direction: std_logic_vector(1 downto 0);
+    signal sub_enable: std_logic := '0';
+    signal shift_direction: std_logic_vector(1 downto 0) := (others => '0');
     constant zero: std_logic_vector(31 downto 0) := (others => '0');
     
     -- Output signals
-    signal adder_sub_out: std_logic_vector(31 downto 0);
-    signal shifter_out: std_logic_vector(31 downto 0);
-    signal mux_out: std_logic_vector(31 downto 0);
+    signal adder_sub_out: std_logic_vector(31 downto 0) := (others => '0');
+    signal shifter_out: std_logic_vector(31 downto 0) := (others => '0');
+    signal mux_out: std_logic_vector(31 downto 0) := (others => '0');
     
     -- Arith signals
-    signal a_XOR_b, a_OR_b, a_AND_b: std_logic_vector(31 downto 0);
+    signal a_XOR_b, a_OR_b, a_AND_b: std_logic_vector(31 downto 0) := (others => '0');
 begin
     a_XOR_b <= A XOR B;
     a_OR_b <= A OR B;

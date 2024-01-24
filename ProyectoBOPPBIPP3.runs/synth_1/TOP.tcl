@@ -71,6 +71,7 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -91,11 +92,11 @@ read_vhdl -library xil_defaultlib {
   {C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd}
   {C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/adder_sub.vhd}
   {C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/bram_memory.vhd}
-  {C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/clock_divider.vhd}
   {C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/control_unit.vhd}
   {C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/conv_7seg.vhd}
   {C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/debouncer.vhd}
   {C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/displays.vhd}
+  {C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/divisor.vhd}
   {C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd}
   {C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/imm_gen.vhd}
   {C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/instruction_rom.vhd}

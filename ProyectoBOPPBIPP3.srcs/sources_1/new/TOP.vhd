@@ -67,6 +67,7 @@ architecture top_arch of TOP is
         x: std_logic_vector (27 downto 0) := "0101111101011110000100000000"
     );
     port (
+        rst: in STD_LOGIC;
         clk_entrada: in STD_LOGIC; -- reloj de entrada de la entity superior
         clk_salida: out STD_LOGIC -- reloj que se utiliza en los process del programa principal
     );
@@ -87,20 +88,21 @@ architecture top_arch of TOP is
     signal main_clk : std_logic;
     signal pc : std_logic_vector(15 downto 0) := (others => '0');
     signal start : std_logic;
+    signal reset_n : std_logic;
 
 begin
-    
+    reset_n <= not(rst);
     CPU_CHIP_inst : CPU_CHIP
         port map (
             ISTR_PORT => start,
             PC_OUT_PORT => pc(5 downto 0),
             INS_BUS => INS_BUS,
             OBUS_PORT => OBUS_PORT,
-            CLK => main_clk
+            CLK => clk
         );
         
     displays_inst:  displays PORT MAP (
-        clk => main_clk,
+        clk => clk,
         digito_0 => pc(3 downto 0),
         digito_1 => pc(7 downto 4),
         digito_2 => pc(11 downto 8),
@@ -109,18 +111,21 @@ begin
         display_enable => s_display
     );
 
-    cd: divisor port map (
+    cd: divisor
+    generic map ( x => "0000100110001001011010000000" )
+    port map (
+        rst => rst,
         clk_entrada => clk,
         clk_salida => main_clk
     );
     
     db_start: debouncer port map (
-        rst => rst,
-        clk => main_clk,
+        rst => reset_n,
+        clk => clk,
         x => START_BUTTON,
         xDeb => open,
-        xDebFallingEdge => start,
-        xDebRisingEdge => open
+        xDebFallingEdge => open,
+        xDebRisingEdge => start
     );
     
 end top_arch;

@@ -73,9 +73,9 @@ begin
         if rising_edge(CLK) then
             if(WE = '1') then
                 if(WADDR = "000000000") then
-                    regs(to_integer(unsigned(WADDR))) <= (others => '0');
+                    regs(to_integer(unsigned(WADDR(5 downto 0)))) <= (others => '0');
                 else
-                    regs(to_integer(unsigned(WADDR))) <= DATA_IN;
+                    regs(to_integer(unsigned(WADDR(5 downto 0)))) <= DATA_IN;
                 end if; 
             end if;
         end if;

@@ -19,30 +19,33 @@ entity divisor is
         x: std_logic_vector (27 downto 0) := "0101111101011110000100000000"
     );
     port (
-        clk_entrada: in STD_LOGIC; -- reloj de entrada de la entity superior
-        clk_salida: out STD_LOGIC -- reloj que se utiliza en los process del programa principal
+        rst: in STD_LOGIC;
+        clk_entrada: in STD_LOGIC;
+        clk_salida: out STD_LOGIC
     );
 end divisor;
 
 architecture divisor_arch of divisor is
- SIGNAL cuenta: std_logic_vector(27 downto 0);
- SIGNAL clk_aux: std_logic;
+ SIGNAL cuenta: std_logic_vector(27 downto 0) := (others => '0');
+ SIGNAL clk_aux: std_logic := '0';
   
 begin
 
 clk_salida<=clk_aux;
   contador:
-  PROCESS(clk_entrada)
-  BEGIN
-    IF(rising_edge(clk_entrada)) THEN
-      IF (cuenta = x) THEN 
-      	clk_aux <= '1';
-        cuenta<= (OTHERS=>'0');
-      ELSE
-        cuenta <= cuenta+'1';
-	    clk_aux<='0';
-      END IF;
+  PROCESS(clk_entrada, rst)
+BEGIN
+    IF (rst = '1') THEN
+        cuenta <= (OTHERS => '0');
+        clk_aux <= '0';
+    ELSIF (rising_edge(clk_entrada)) THEN
+        IF (cuenta = x) THEN 
+            clk_aux <= NOT clk_aux;
+            cuenta <= (OTHERS => '0');
+        ELSE
+            cuenta <= cuenta + '1';
+        END IF;
     END IF;
-  END PROCESS contador;
+END PROCESS;
 
 end divisor_arch;

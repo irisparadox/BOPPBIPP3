@@ -12,9 +12,8 @@ architecture Behavioral of TB_CPU_CHIP is
     signal INS_BUS_sig : STD_LOGIC_VECTOR(4 downto 0) := (others => '0');
     signal OBUS_PORT_sig : STD_LOGIC_VECTOR(10 downto 0) := (others => '0');
 
-    constant CLOCK_PERIOD : time := 10 ns; -- Ajusta según tus necesidades
+    constant CLOCK_PERIOD : time := 50 ns;
 
-    -- Declaración del componente
     component CPU_CHIP
         Port ( ISTR_PORT : in STD_LOGIC;
                INS_BUS : out STD_LOGIC_VECTOR (4 downto 0);
@@ -23,7 +22,7 @@ architecture Behavioral of TB_CPU_CHIP is
     end component;
 
 begin
-    -- Instancia de la entidad a probar
+    
     DUT: CPU_CHIP
         port map (
             ISTR_PORT => ISTR_PORT_sig,
@@ -32,7 +31,6 @@ begin
             CLK => CLK_sig
         );
 
-    -- Proceso para generar el clock
     CLK_process: process
     begin
         while true loop
@@ -43,7 +41,6 @@ begin
         end loop;
     end process;
 
-    -- Proceso para simular la condición inicial
     Initial_condition_process: process
     begin
         ISTR_PORT_sig <= '0';

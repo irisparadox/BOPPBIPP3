@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Wed Jan 24 18:24:34 2024
+| Date         : Wed Jan 24 20:34:50 2024
 | Host         : Nostromo running 64-bit major release  (build 9200)
 | Command      : report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb
 | Design       : TOP
@@ -31,13 +31,13 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                |  140 |     0 |          0 |     20800 |  0.67 |
-|   LUT as Logic             |  105 |     0 |          0 |     20800 |  0.50 |
+| Slice LUTs*                |  132 |     0 |          0 |     20800 |  0.63 |
+|   LUT as Logic             |   97 |     0 |          0 |     20800 |  0.47 |
 |   LUT as Memory            |   35 |     0 |          0 |      9600 |  0.36 |
 |     LUT as Distributed RAM |   32 |     0 |            |           |       |
 |     LUT as Shift Register  |    3 |     0 |            |           |       |
-| Slice Registers            |  155 |     0 |          0 |     41600 |  0.37 |
-|   Register as Flip Flop    |  155 |     0 |          0 |     41600 |  0.37 |
+| Slice Registers            |  127 |     0 |          0 |     41600 |  0.31 |
+|   Register as Flip Flop    |  127 |     0 |          0 |     41600 |  0.31 |
 |   Register as Latch        |    0 |     0 |          0 |     41600 |  0.00 |
 | F7 Muxes                   |    0 |     0 |          0 |     16300 |  0.00 |
 | F8 Muxes                   |    0 |     0 |          0 |      8150 |  0.00 |
@@ -61,7 +61,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 | 10    |          Yes |           - |          Set |
 | 14    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 131   |          Yes |       Reset |            - |
+| 103   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -119,7 +119,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| BUFGCTRL   |    2 |     0 |          0 |        32 |  6.25 |
+| BUFGCTRL   |    1 |     0 |          0 |        32 |  3.13 |
 | BUFIO      |    0 |     0 |          0 |        20 |  0.00 |
 | MMCME2_ADV |    0 |     0 |          0 |         5 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |          0 |         5 |  0.00 |
@@ -153,21 +153,21 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  131 |        Flop & Latch |
+| FDRE     |  103 |        Flop & Latch |
 | LUT4     |   36 |                 LUT |
-| LUT6     |   33 |                 LUT |
 | RAMD64E  |   32 |  Distributed Memory |
+| LUT6     |   29 |                 LUT |
 | OBUF     |   27 |                  IO |
-| LUT5     |   26 |                 LUT |
+| LUT5     |   25 |                 LUT |
 | LUT2     |   20 |                 LUT |
-| CARRY4   |   20 |          CarryLogic |
 | FDCE     |   14 |        Flop & Latch |
+| CARRY4   |   13 |          CarryLogic |
 | FDPE     |   10 |        Flop & Latch |
-| LUT3     |    6 |                 LUT |
+| LUT3     |    5 |                 LUT |
 | SRL16E   |    3 |  Distributed Memory |
-| LUT1     |    3 |                 LUT |
 | IBUF     |    3 |                  IO |
-| BUFG     |    2 |               Clock |
+| LUT1     |    1 |                 LUT |
+| BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
 

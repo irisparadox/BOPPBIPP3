@@ -48,7 +48,7 @@ begin
     begin 
         if rising_edge(CLK) then
             if ENABLE = '1' then
-                aux <= regs(to_integer(unsigned(ADDR)));
+                aux <= regs(to_integer(unsigned(ADDR(5 downto 0))));
             end if;
         end if;
     end process;

@@ -1,0 +1,6 @@
+Time resolution is 1 ps
+ERROR: Index 64 out of bound 63 downto 0
+Time: 745 ns  Iteration: 1  Process: /TB_CPU_CHIP/DUT/ir/READ
+  File: C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/instruction_rom.vhd
+
+HDL Line: C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/instruction_rom.vhd:51

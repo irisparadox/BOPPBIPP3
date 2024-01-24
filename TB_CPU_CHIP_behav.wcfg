@@ -12,7 +12,7 @@
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
       <ZoomEndTime time="1,600.001 ns"></ZoomEndTime>
-      <Cursor1Time time="1,600.000 ns"></Cursor1Time>
+      <Cursor1Time time="0.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="336"></NameColumnWidth>
@@ -50,6 +50,5 @@
    <wvobject fp_name="/TB_CPU_CHIP/DUT/ram/memory" type="array">
       <obj_property name="ElementShortName">memory[15:0][0:3][7:0]</obj_property>
       <obj_property name="ObjectShortName">memory[15:0][0:3][7:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

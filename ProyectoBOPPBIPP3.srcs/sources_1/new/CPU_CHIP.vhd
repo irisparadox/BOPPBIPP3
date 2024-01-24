@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Universidad Complutense de Madrid
+-- Engineer: Gabriel Guillermo Saavedra Moreira
 -- 
 -- Create Date: 20.01.2024 19:08:14
 -- Design Name: 
@@ -33,6 +33,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity CPU_CHIP is
     Port ( ISTR_PORT : in STD_LOGIC;
+           PC_OUT_PORT : out STD_LOGIC_VECTOR (5 downto 0);
            INS_BUS : out STD_LOGIC_VECTOR (4 downto 0);
            OBUS_PORT : out STD_LOGIC_VECTOR (10 downto 0);
            CLK : in STD_LOGIC);
@@ -169,7 +170,8 @@ architecture cpu_arch of CPU_CHIP is
 begin
     INS_BUS <= INS_WORD(31 downto 27);
     OBUS_PORT <= DATA_OUT(10 downto 0);
-
+    PC_OUT_PORT <= PC_OUT(5 downto 0);
+    
     -- IF --
     
     pc: program_counter

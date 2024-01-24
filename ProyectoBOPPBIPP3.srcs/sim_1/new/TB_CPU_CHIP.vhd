@@ -12,7 +12,7 @@ architecture Behavioral of TB_CPU_CHIP is
     signal INS_BUS_sig : STD_LOGIC_VECTOR(4 downto 0) := (others => '0');
     signal OBUS_PORT_sig : STD_LOGIC_VECTOR(10 downto 0) := (others => '0');
 
-    constant CLOCK_PERIOD : time := 50 ns; -- Ajusta según tus necesidades
+    constant CLOCK_PERIOD : time := 10 ns; -- Ajusta según tus necesidades
 
     -- Declaración del componente
     component CPU_CHIP

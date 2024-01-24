@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Wed Jan 24 20:33:54 2024
-# Process ID: 20732
+# Start of session at: Wed Jan 24 22:48:19 2024
+# Process ID: 9148
 # Current directory: C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.runs/synth_1
 # Command line: vivado.exe -log TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
 # Log file: C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.runs/synth_1/TOP.vds
@@ -12,7 +12,7 @@
 # Running On: Nostromo, OS: Windows, CPU Frequency: 1797 MHz, CPU Physical cores: 16, Host memory: 16456 MB
 #-----------------------------------------------------------
 source TOP.tcl -notrace
-create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 439.301 ; gain = 165.547
+create_project: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 437.453 ; gain = 163.215
 Command: read_checkpoint -auto_incremental -incremental {C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/utils_1/imports/synth_1/CPU_CHIP.dcp}
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/utils_1/imports/synth_1/CPU_CHIP.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -25,12 +25,12 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 18164
+INFO: [Synth 8-7075] Helper process launched with PID 15828
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1256.180 ; gain = 411.836
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 1256.066 ; gain = 412.105
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'TOP' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/TOP.vhd:44]
-INFO: [Synth 8-3491] module 'CPU_CHIP' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:34' bound to instance 'CPU_CHIP_inst' of component 'CPU_CHIP' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/TOP.vhd:95]
+INFO: [Synth 8-3491] module 'CPU_CHIP' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:34' bound to instance 'CPU_CHIP_inst' of component 'CPU_CHIP' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/TOP.vhd:91]
 INFO: [Synth 8-638] synthesizing module 'CPU_CHIP' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:42]
 INFO: [Synth 8-3491] module 'program_counter' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/program_counter.vhd:34' bound to instance 'pc' of component 'program_counter' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:177]
 INFO: [Synth 8-638] synthesizing module 'program_counter' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/program_counter.vhd:42]
@@ -117,7 +117,7 @@ INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Docume
 	Parameter n_bits bound to: 9 - type: integer 
 INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwWADDRMEM' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:446]
 INFO: [Synth 8-256] done synthesizing module 'CPU_CHIP' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:42]
-INFO: [Synth 8-3491] module 'displays' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/displays.vhd:7' bound to instance 'displays_inst' of component 'displays' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/TOP.vhd:104]
+INFO: [Synth 8-3491] module 'displays' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/displays.vhd:7' bound to instance 'displays_inst' of component 'displays' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/TOP.vhd:100]
 INFO: [Synth 8-638] synthesizing module 'displays' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/displays.vhd:19]
 INFO: [Synth 8-3491] module 'conv_7seg' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/conv_7seg.vhd:32' bound to instance 'conv_7seg_digito_0' of component 'conv_7seg' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/displays.vhd:35]
 INFO: [Synth 8-638] synthesizing module 'conv_7seg' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/conv_7seg.vhd:37]
@@ -126,14 +126,12 @@ INFO: [Synth 8-3491] module 'conv_7seg' declared at 'C:/Users/gabri/Documents/Vi
 INFO: [Synth 8-3491] module 'conv_7seg' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/conv_7seg.vhd:32' bound to instance 'conv_7seg_digito_2' of component 'conv_7seg' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/displays.vhd:37]
 INFO: [Synth 8-3491] module 'conv_7seg' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/conv_7seg.vhd:32' bound to instance 'conv_7seg_digito_3' of component 'conv_7seg' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/displays.vhd:38]
 INFO: [Synth 8-256] done synthesizing module 'displays' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/displays.vhd:19]
-	Parameter x bound to: 28'b0000100110001001011010000000 
-INFO: [Synth 8-3491] module 'divisor' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/divisor.vhd:17' bound to instance 'cd' of component 'divisor' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/TOP.vhd:114]
-INFO: [Synth 8-638] synthesizing module 'divisor' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/divisor.vhd:28]
-	Parameter x bound to: 28'b0000100110001001011010000000 
-INFO: [Synth 8-256] done synthesizing module 'divisor' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/divisor.vhd:28]
-INFO: [Synth 8-3491] module 'debouncer' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/debouncer.vhd:5' bound to instance 'db_start' of component 'debouncer' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/TOP.vhd:122]
+INFO: [Synth 8-3491] module 'debouncer' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/debouncer.vhd:5' bound to instance 'db_start' of component 'debouncer' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/TOP.vhd:110]
 INFO: [Synth 8-638] synthesizing module 'debouncer' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/debouncer.vhd:16]
 INFO: [Synth 8-256] done synthesizing module 'debouncer' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/debouncer.vhd:16]
+INFO: [Synth 8-3491] module 'divisor' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/divisor.vhd:18' bound to instance 'clk_divider_inst' of component 'divisor' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/TOP.vhd:119]
+INFO: [Synth 8-638] synthesizing module 'divisor' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/divisor.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'divisor' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/divisor.vhd:25]
 INFO: [Synth 8-256] done synthesizing module 'TOP' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/TOP.vhd:44]
 WARNING: [Synth 8-7129] Port ADDR[31] in module bram_memory is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDR[30] in module bram_memory is either unconnected or has no load
@@ -173,18 +171,18 @@ WARNING: [Synth 8-7129] Port ADDR[8] in module instruction_rom is either unconne
 WARNING: [Synth 8-7129] Port ADDR[7] in module instruction_rom is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDR[6] in module instruction_rom is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1368.461 ; gain = 524.117
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 1367.926 ; gain = 523.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1368.461 ; gain = 524.117
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 1367.926 ; gain = 523.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1368.461 ; gain = 524.117
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 1367.926 ; gain = 523.965
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1368.461 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1367.926 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -195,28 +193,28 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/TOP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1475.012 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1436.754 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1475.012 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1436.754 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:20 . Memory (MB): peak = 1475.012 ; gain = 630.668
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:25 . Memory (MB): peak = 1436.754 ; gain = 592.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:20 . Memory (MB): peak = 1475.012 ; gain = 630.668
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:25 . Memory (MB): peak = 1436.754 ; gain = 592.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:20 . Memory (MB): peak = 1475.012 ; gain = 630.668
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:25 . Memory (MB): peak = 1436.754 ; gain = 592.793
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'controller.state_reg' in module 'debouncer'
 WARNING: [Synth 8-327] inferring latch for variable 'B_reg' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/barrel_shifter.vhd:52]
@@ -230,7 +228,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'B_reg' [C:/Users/gabri/Docu
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'controller.state_reg' using encoding 'sequential' in module 'debouncer'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:21 . Memory (MB): peak = 1475.012 ; gain = 630.668
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:27 . Memory (MB): peak = 1436.754 ; gain = 592.793
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'CPU_CHIP_inst/fwADDRB' (forwarding_unit__parameterized3) to 'CPU_CHIP_inst/fwIMM'
 ---------------------------------------------------------------------------------
@@ -239,11 +237,13 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   3 Input   33 Bit       Adders := 1     
+	   2 Input   26 Bit       Adders := 1     
 	   2 Input    9 Bit       Adders := 1     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
 	               32 Bit    Registers := 8     
+	               26 Bit    Registers := 1     
 	                9 Bit    Registers := 8     
 	                8 Bit    Registers := 71    
 	                3 Bit    Registers := 1     
@@ -254,6 +254,7 @@ Detailed RTL Component Info :
 	   2 Input   32 Bit        Muxes := 5     
 	  32 Input   32 Bit        Muxes := 2     
 	   4 Input   32 Bit        Muxes := 1     
+	   2 Input   26 Bit        Muxes := 1     
 	   2 Input    9 Bit        Muxes := 1     
 	   8 Input    8 Bit        Muxes := 1     
 	   4 Input    7 Bit        Muxes := 1     
@@ -352,7 +353,7 @@ WARNING: [Synth 8-3332] Sequential element (CPU_CHIP_inst/core/coreshifter/B_reg
 WARNING: [Synth 8-3332] Sequential element (CPU_CHIP_inst/core/coreshifter/B_reg[1]) is unused and will be removed from module TOP.
 WARNING: [Synth 8-3332] Sequential element (CPU_CHIP_inst/core/coreshifter/B_reg[0]) is unused and will be removed from module TOP.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:03 ; elapsed = 00:00:24 . Memory (MB): peak = 1475.012 ; gain = 630.668
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:31 . Memory (MB): peak = 1436.754 ; gain = 592.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -373,13 +374,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:31 . Memory (MB): peak = 1475.012 ; gain = 630.668
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:38 . Memory (MB): peak = 1436.754 ; gain = 592.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:31 . Memory (MB): peak = 1475.012 ; gain = 630.668
+Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:38 . Memory (MB): peak = 1436.754 ; gain = 592.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -399,7 +400,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:04 ; elapsed = 00:00:31 . Memory (MB): peak = 1475.012 ; gain = 630.668
+Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:39 . Memory (MB): peak = 1436.754 ; gain = 592.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -417,37 +418,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:05 ; elapsed = 00:00:40 . Memory (MB): peak = 1475.012 ; gain = 630.668
+Finished IO Insertion : Time (s): cpu = 00:00:07 ; elapsed = 00:00:46 . Memory (MB): peak = 1436.754 ; gain = 592.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:05 ; elapsed = 00:00:40 . Memory (MB): peak = 1475.012 ; gain = 630.668
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:07 ; elapsed = 00:00:46 . Memory (MB): peak = 1436.754 ; gain = 592.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:05 ; elapsed = 00:00:40 . Memory (MB): peak = 1475.012 ; gain = 630.668
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:07 ; elapsed = 00:00:46 . Memory (MB): peak = 1436.754 ; gain = 592.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:05 ; elapsed = 00:00:40 . Memory (MB): peak = 1475.012 ; gain = 630.668
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:07 ; elapsed = 00:00:46 . Memory (MB): peak = 1436.754 ; gain = 592.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:40 . Memory (MB): peak = 1475.012 ; gain = 630.668
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:46 . Memory (MB): peak = 1436.754 ; gain = 592.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:05 ; elapsed = 00:00:40 . Memory (MB): peak = 1475.012 ; gain = 630.668
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:07 ; elapsed = 00:00:46 . Memory (MB): peak = 1436.754 ; gain = 592.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -459,7 +460,7 @@ Static Shift Register Report:
 +------------+---------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 |TOP         | CPU_CHIP_inst/fwCONTROLMEM/aux_reg[4] | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 |TOP         | CPU_CHIP_inst/fwWADDRMEM/aux_reg[4]   | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
-|TOP         | CPU_CHIP_inst/fwWADDRMEM/aux_reg[1]   | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|TOP         | CPU_CHIP_inst/fwWADDRMEM/aux_reg[1]   | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
 +------------+---------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
 ---------------------------------------------------------------------------------
@@ -480,43 +481,43 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    13|
-|3     |LUT1   |     1|
-|4     |LUT2   |    20|
-|5     |LUT3   |     5|
-|6     |LUT4   |    36|
-|7     |LUT5   |    25|
-|8     |LUT6   |    29|
+|2     |CARRY4 |    20|
+|3     |LUT1   |     2|
+|4     |LUT2   |    46|
+|5     |LUT3   |     7|
+|6     |LUT4   |    43|
+|7     |LUT5   |    21|
+|8     |LUT6   |    32|
 |9     |RAM64M |     8|
 |10    |SRL16E |     3|
-|11    |FDCE   |    14|
+|11    |FDCE   |    41|
 |12    |FDPE   |    10|
-|13    |FDRE   |   103|
+|13    |FDRE   |   104|
 |14    |IBUF   |     3|
 |15    |OBUF   |    27|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:05 ; elapsed = 00:00:40 . Memory (MB): peak = 1475.012 ; gain = 630.668
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:07 ; elapsed = 00:00:46 . Memory (MB): peak = 1436.754 ; gain = 592.793
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 75 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:03 ; elapsed = 00:00:37 . Memory (MB): peak = 1475.012 ; gain = 524.117
-Synthesis Optimization Complete : Time (s): cpu = 00:00:05 ; elapsed = 00:00:40 . Memory (MB): peak = 1475.012 ; gain = 630.668
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:05 ; elapsed = 00:00:43 . Memory (MB): peak = 1436.754 ; gain = 523.965
+Synthesis Optimization Complete : Time (s): cpu = 00:00:07 ; elapsed = 00:00:46 . Memory (MB): peak = 1436.754 ; gain = 592.793
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1475.012 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 21 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1436.754 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 28 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1475.012 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1436.754 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 8 instances were transformed.
   RAM64M => RAM64M (RAMD64E(x4)): 8 instances
 
-Synth Design complete | Checksum: 2cc389e8
+Synth Design complete | Checksum: 4b3dcdb2
 INFO: [Common 17-83] Releasing license: Synthesis
 102 Infos, 112 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:47 . Memory (MB): peak = 1475.012 ; gain = 1010.832
+synth_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:53 . Memory (MB): peak = 1436.754 ; gain = 974.418
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.runs/synth_1/TOP.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Jan 24 20:34:50 2024...
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 24 22:49:22 2024...

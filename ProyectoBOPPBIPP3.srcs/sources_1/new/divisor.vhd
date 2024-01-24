@@ -11,41 +11,38 @@
 --
 ----------------------------------------------------------------------------------
 library IEEE;
-use IEEE.std_logic_1164.all;
-USE IEEE.std_logic_unsigned.ALL;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity divisor is
-    generic (
-        x: std_logic_vector (27 downto 0) := "0101111101011110000100000000"
-    );
-    port (
-        rst: in STD_LOGIC;
-        clk_entrada: in STD_LOGIC;
-        clk_salida: out STD_LOGIC
-    );
+    Port ( clk : in STD_LOGIC;
+           rst : in STD_LOGIC;
+           start : in STD_LOGIC;
+           slow_clk : out STD_LOGIC);
 end divisor;
 
-architecture divisor_arch of divisor is
- SIGNAL cuenta: std_logic_vector(27 downto 0) := (others => '0');
- SIGNAL clk_aux: std_logic := '0';
-  
+architecture Behavioral of divisor is
+    signal counter : integer range 0 to 49999999 := 0; -- Assuming 100MHz clock
+    signal slow_clk_temp : STD_LOGIC := '0';
 begin
+    process(clk, rst)
+    begin
+        if rst = '1' then
+            counter <= 0;
+            slow_clk_temp <= '0';
+        elsif rising_edge(clk) then
+            if start = '1' then
+                if counter = 49999999 then -- Adjust based on desired frequency
+                    counter <= 0;
+                    slow_clk_temp <= not slow_clk_temp;
+                else
+                    counter <= counter + 1;
+                end if;
+            end if;
+        end if;
+    end process;
 
-clk_salida<=clk_aux;
-  contador:
-  PROCESS(clk_entrada, rst)
-BEGIN
-    IF (rst = '1') THEN
-        cuenta <= (OTHERS => '0');
-        clk_aux <= '0';
-    ELSIF (rising_edge(clk_entrada)) THEN
-        IF (cuenta = x) THEN 
-            clk_aux <= NOT clk_aux;
-            cuenta <= (OTHERS => '0');
-        ELSE
-            cuenta <= cuenta + '1';
-        END IF;
-    END IF;
-END PROCESS;
+    slow_clk <= slow_clk_temp;
 
-end divisor_arch;
+end Behavioral;

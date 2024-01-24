@@ -62,17 +62,6 @@ architecture top_arch of TOP is
      );
     end component;
     
-    component divisor is
-    generic (
-        x: std_logic_vector (27 downto 0) := "0101111101011110000100000000"
-    );
-    port (
-        rst: in STD_LOGIC;
-        clk_entrada: in STD_LOGIC; -- reloj de entrada de la entity superior
-        clk_salida: out STD_LOGIC -- reloj que se utiliza en los process del programa principal
-    );
-    end component;
-    
     COMPONENT debouncer
     PORT (
       rst: IN std_logic;
@@ -83,18 +72,25 @@ architecture top_arch of TOP is
       xDebRisingEdge: OUT std_logic
     );
     END COMPONENT;
+    
+    component divisor is
+        Port ( clk : in STD_LOGIC;
+               rst : in STD_LOGIC;
+               start : in STD_LOGIC;
+               slow_clk : out STD_LOGIC);
+    end component;
 
     signal display_0, display_1, display_2, display_3 : STD_LOGIC_VECTOR (6 downto 0);
-    signal main_clk : std_logic;
     signal pc : std_logic_vector(15 downto 0) := (others => '0');
     signal start : std_logic;
     signal reset_n : std_logic;
+    signal enable_1hz : STD_LOGIC;
 
 begin
     reset_n <= not(rst);
     CPU_CHIP_inst : CPU_CHIP
         port map (
-            ISTR_PORT => start,
+            ISTR_PORT => enable_1hz,
             PC_OUT_PORT => pc(5 downto 0),
             INS_BUS => INS_BUS,
             OBUS_PORT => OBUS_PORT,
@@ -110,22 +106,21 @@ begin
         display  => display,
         display_enable => s_display
     );
-
-    cd: divisor
-    generic map ( x => "0000100110001001011010000000" )
-    port map (
-        rst => rst,
-        clk_entrada => clk,
-        clk_salida => main_clk
-    );
     
     db_start: debouncer port map (
         rst => reset_n,
         clk => clk,
         x => START_BUTTON,
-        xDeb => open,
+        xDeb => start,
         xDebFallingEdge => open,
-        xDebRisingEdge => start
+        xDebRisingEdge => open
+    );
+    
+    clk_divider_inst: divisor port map (
+        clk => clk,
+        rst => rst,
+        start => start,
+        slow_clk => enable_1hz
     );
     
 end top_arch;

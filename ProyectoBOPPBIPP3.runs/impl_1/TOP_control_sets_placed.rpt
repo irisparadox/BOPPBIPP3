@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Wed Jan 24 20:36:03 2024
+| Date         : Wed Jan 24 22:50:20 2024
 | Host         : Nostromo running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TOP_control_sets_placed.rpt
 | Design       : TOP
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     5 |
-|    Minimum number of control sets                        |     5 |
+| Total control sets                                       |     6 |
+|    Minimum number of control sets                        |     6 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    18 |
+| Unused register locations in slices containing registers |    22 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,7 +39,7 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     5 |
+| Total control sets |     6 |
 | >= 0 to < 4        |     0 |
 | >= 4 to < 6        |     1 |
 | >= 6 to < 8        |     0 |
@@ -47,7 +47,7 @@ Table of Contents
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     4 |
+| >= 16              |     5 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -59,10 +59,10 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |              20 |            5 |
-| No           | No                    | Yes                    |               4 |            2 |
+| No           | No                    | Yes                    |               5 |            3 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |              98 |           35 |
-| Yes          | No                    | Yes                    |              20 |            5 |
+| Yes          | No                    | No                     |              99 |           35 |
+| Yes          | No                    | Yes                    |              46 |           12 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -73,11 +73,12 @@ Table of Contents
 +----------------+-----------------------------------------------+------------------+------------------+----------------+--------------+
 |  Clock Signal  |                 Enable Signal                 | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
 +----------------+-----------------------------------------------+------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG |                                               | rst_IBUF         |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG |                                               | rst_IBUF         |                3 |              5 |         1.67 |
 |  clk_IBUF_BUFG |                                               |                  |                5 |             20 |         4.00 |
 |  clk_IBUF_BUFG | db_start/timer.count[0]_i_1_n_0               | rst_IBUF         |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG | db_start/E[0]                                 | rst_IBUF         |                7 |             26 |         3.71 |
 |  clk_IBUF_BUFG | CPU_CHIP_inst/fwCONTROLMEM/fwCONTROLWB_OUT[0] |                  |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG | db_start/start                                |                  |               35 |            101 |         2.89 |
+|  clk_IBUF_BUFG | clk_divider_inst/enable_1hz                   |                  |               35 |            102 |         2.91 |
 +----------------+-----------------------------------------------+------------------+------------------+----------------+--------------+
 
 

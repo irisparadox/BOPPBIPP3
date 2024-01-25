@@ -50,7 +50,7 @@ architecture cpu_arch of CPU_CHIP is
     end component;
     
     component instruction_rom is
-    Port ( ADDR : in STD_LOGIC_VECTOR (8 downto 0);
+    Port ( ADDR : in STD_LOGIC_VECTOR (5 downto 0);
            ENABLE : in STD_LOGIC;
            CLK : in STD_LOGIC;
            INS_OUT : out STD_LOGIC_VECTOR (31 downto 0));
@@ -66,9 +66,9 @@ architecture cpu_arch of CPU_CHIP is
     Port ( DATA_IN : in STD_LOGIC_VECTOR (31 downto 0);
            BUS_A : out STD_LOGIC_VECTOR (31 downto 0);
            BUS_B : out STD_LOGIC_VECTOR (31 downto 0);
-           ADDR_A : in STD_LOGIC_VECTOR (8 downto 0);
-           ADDR_B : in STD_LOGIC_VECTOR (8 downto 0);
-           WADDR : in STD_LOGIC_VECTOR(8 downto 0);
+           ADDR_A : in STD_LOGIC_VECTOR (4 downto 0);
+           ADDR_B : in STD_LOGIC_VECTOR (4 downto 0);
+           WADDR : in STD_LOGIC_VECTOR(4 downto 0);
            WE : in STD_LOGIC;
            CLK: in STD_LOGIC);
     end component;
@@ -90,7 +90,7 @@ architecture cpu_arch of CPU_CHIP is
     component bram_memory is
     Port ( DATA_IN : in STD_LOGIC_VECTOR (31 downto 0);
            DATA_OUT : out STD_LOGIC_VECTOR (31 downto 0);
-           ADDR : in STD_LOGIC_VECTOR (31 downto 0);
+           ADDR : in STD_LOGIC_VECTOR (5 downto 0);
            ENABLE : in STD_LOGIC;
            WE : in STD_LOGIC;
            CLK : in STD_LOGIC);
@@ -185,7 +185,7 @@ begin
     
     ir: instruction_rom
     Port map (
-        ADDR => PC_OUT,
+        ADDR => PC_OUT(5 downto 0),
         ENABLE => ISTR_PORT,
         CLK => CLK,
         INS_OUT => INS_WORD
@@ -269,9 +269,9 @@ begin
         DATA_IN => DATA_OUT,
         BUS_A => fwA_IN,
         BUS_B => fwB_IN,
-        ADDR_A => fwADDRA_OUT,
-        ADDR_B => fwADDRB_OUT,
-        WADDR => fwWADDR_OUT,
+        ADDR_A => fwADDRA_OUT(4 downto 0),
+        ADDR_B => fwADDRB_OUT(4 downto 0),
+        WADDR => fwWADDR_OUT(4 downto 0),
         WE => fwCONTROLWB_OUT(4), 
         CLK => CLK
     );
@@ -327,6 +327,15 @@ begin
     Port map (
         DATA_IN => fwIMMGEN,
         DATA_OUT => fwIMMGEN_OUT,
+        ENABLE => ISTR_PORT,
+        CLK => CLK
+    );
+    
+    fwPCTOEX: forwarding_unit
+    generic map ( n_bits => 9 )
+    Port map (
+        DATA_IN => fwPCIF_OUT,
+        DATA_OUT => fwPCEX_OUT,
         ENABLE => ISTR_PORT,
         CLK => CLK
     );
@@ -409,7 +418,7 @@ begin
     Port map (
         DATA_IN => fwALUOUT_OUT,
         DATA_OUT => fwMEMORYOUT_IN,
-        ADDR => fwRAMADDR_OUT,
+        ADDR => fwRAMADDR_OUT(5 downto 0),
         ENABLE => ISTR_PORT,
         WE => fwCONTROLMEM_OUT(5),
         CLK => CLK

@@ -49,6 +49,9 @@ begin
         end if;
     end process;
 
-    display_enable <= "0000";
+    display_enable <=   "1110" when (contador_refresco(19 downto 18) = "00") else
+                        "1101" when (contador_refresco(19 downto 18) = "01") else
+                        "1011" when (contador_refresco(19 downto 18) = "10") else
+                        "0111";
 
 end Behavioral;

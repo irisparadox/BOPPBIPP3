@@ -34,7 +34,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity bram_memory is
     Port ( DATA_IN : in STD_LOGIC_VECTOR (31 downto 0);
            DATA_OUT : out STD_LOGIC_VECTOR (31 downto 0);
-           ADDR : in STD_LOGIC_VECTOR (31 downto 0);
+           ADDR : in STD_LOGIC_VECTOR (5 downto 0);
            ENABLE : in STD_LOGIC;
            WE : in STD_LOGIC;
            CLK : in STD_LOGIC);
@@ -42,7 +42,7 @@ end bram_memory;
 
 architecture bram_arch of bram_memory is
     type bytes is array(0 to 3) of std_logic_vector(7 downto 0);
-    type memory_blocks is array(15 downto 0) of bytes;
+    type memory_blocks is array(0 to 15) of bytes;
     
     signal memory : memory_blocks := (others => (others => (others => '0')));
     signal b0, b1, b2, b3: std_logic_vector(7 downto 0) := (others => '0');

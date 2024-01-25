@@ -84,6 +84,12 @@ begin
                     when "011" =>
                         SW_MEM <= '1';
                     when others =>
+                        ALU_OP <= "000";
+                        USE_IMM <= '0';
+                        WE_WB <= '0';
+                        SW_MEM <= '0';
+                        MOD_PC <= '0';
+                        LW_MEM <= '0';
                 end case;
             when others =>
                 USE_IMM <= '0';

@@ -35,9 +35,9 @@ entity dualr_bank is
     Port ( DATA_IN : in STD_LOGIC_VECTOR (31 downto 0);
            BUS_A : out STD_LOGIC_VECTOR (31 downto 0);
            BUS_B : out STD_LOGIC_VECTOR (31 downto 0);
-           ADDR_A : in STD_LOGIC_VECTOR (8 downto 0);
-           ADDR_B : in STD_LOGIC_VECTOR (8 downto 0);
-           WADDR : in STD_LOGIC_VECTOR(8 downto 0);
+           ADDR_A : in STD_LOGIC_VECTOR (4 downto 0);
+           ADDR_B : in STD_LOGIC_VECTOR (4 downto 0);
+           WADDR : in STD_LOGIC_VECTOR(4 downto 0);
            WE : in STD_LOGIC;
            CLK: in STD_LOGIC);
 end dualr_bank;
@@ -54,28 +54,28 @@ architecture bank_arch of dualr_bank is
     -- t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11: std_logic_vector(31 downto 0);
     
     -- Function parameter registers
-    -- a0, a1, a2, a3, a4, a5, a6, a7, a8, a9: std_logic_vector(31 downto 0);
+    -- a0, a1, a2, a3, a4, a5: std_logic_vector(31 downto 0);
     
     -- Stack pointer
-    -- sp: std_logic_vector(31 downto 0);
+    -- sp : std_logic_vector(31 downto 0);
     
     -- Output signals
     signal reg_outA: std_logic_vector(31 downto 0) := (others => '0');
     signal reg_outB: std_logic_vector(31 downto 0) := (others => '0');
     
-    type registerBank is array(35 downto 0) of std_logic_vector(31 downto 0);
+    type registerBank is array(31 downto 0) of std_logic_vector(31 downto 0);
     signal regs: registerBank := (others => (others => '0'));
 begin
-    BUS_A <= regs(to_integer(unsigned(ADDR_A)));
-    BUS_B <= regs(to_integer(unsigned(ADDR_B)));
+    BUS_A <= regs(to_integer(unsigned(ADDR_A(4 downto 0))));
+    BUS_B <= regs(to_integer(unsigned(ADDR_B(4 downto 0))));
     SYNC: process(CLK)
     begin
         if rising_edge(CLK) then
             if(WE = '1') then
                 if(WADDR = "000000000") then
-                    regs(to_integer(unsigned(WADDR(5 downto 0)))) <= (others => '0');
+                    regs(to_integer(unsigned(WADDR(4 downto 0)))) <= (others => '0');
                 else
-                    regs(to_integer(unsigned(WADDR(5 downto 0)))) <= DATA_IN;
+                    regs(to_integer(unsigned(WADDR(4 downto 0)))) <= DATA_IN;
                 end if; 
             end if;
         end if;

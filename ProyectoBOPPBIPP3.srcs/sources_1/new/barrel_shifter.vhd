@@ -55,6 +55,7 @@ begin
             when "10" =>
                 B <= std_logic_vector(signed(A) sra shift_amount);
             when others =>
+                B <= (others => '0');
         end case;
     end process;
 end bs_arch;

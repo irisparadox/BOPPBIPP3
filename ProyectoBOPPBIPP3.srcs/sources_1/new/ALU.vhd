@@ -98,6 +98,10 @@ begin
                    a_OR_b when "011",
                    a_AND_b when "100",
                    shifter_out when others;
+    with OP select
+        shift_direction <= "00" when "101",
+                            "01" when "110",
+                            "10" when others;
                    
     with adder_sub_out select
         flag_zero <= '1' when zero,

@@ -84,7 +84,7 @@ architecture top_arch of TOP is
     signal pc : std_logic_vector(15 downto 0) := (others => '0');
     signal start : std_logic;
     signal reset_n : std_logic;
-    signal enable_1hz : STD_LOGIC;
+    signal enable_1hz : STD_LOGIC := '0';
 
 begin
     reset_n <= not(rst);

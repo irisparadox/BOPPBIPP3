@@ -35,10 +35,13 @@ begin
             if start = '1' then
                 if counter = 49999999 then -- Adjust based on desired frequency
                     counter <= 0;
-                    slow_clk_temp <= not slow_clk_temp;
+                    slow_clk_temp <= '1';
                 else
                     counter <= counter + 1;
+                    slow_clk_temp <= '0';
                 end if;
+            else
+                slow_clk_temp <= '0';
             end if;
         end if;
     end process;

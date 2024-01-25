@@ -164,7 +164,8 @@ architecture cpu_arch of CPU_CHIP is
     signal fwWADDR_OUT: std_logic_vector(8 downto 0) := (others => '0');
     
     -- MUXES --
-    signal A_ALU, B_ALU : std_logic_vector (31 downto 0) := (others => '0');
+    signal A_ALU, B_ALU_AUX, B_ALU : std_logic_vector (31 downto 0) := (others => '0');
+    signal B_MUX_SEL : std_logic := '0';
     
     signal DATA_OUT: std_logic_vector(31 downto 0) := (others => '0');
 begin
@@ -343,14 +344,19 @@ begin
     -- ID --
     
     -- EX --
+    B_MUX_SEL <= fwCONTROLEX_OUT(7) OR fwCONTROLEX_OUT(5);
     
     with fwCONTROLEX_OUT(6) select
         A_ALU <= fwA_OUT when '0',
                  std_logic_vector(resize(unsigned(fwPCEX_OUT), 32)) when others;
     
     with fwCONTROLEX_OUT(3) select
-        B_ALU <= fwB_OUT when '0',
-                 fwIMMGEN_OUT when others;
+        B_ALU_AUX <= fwB_OUT when '0',
+                     fwIMMGEN_OUT when others;
+                 
+    with B_MUX_SEL select
+        B_ALU <= B_ALU_AUX when '0',
+                 (others => '0') when others;
 
     core: ALU
     Port map (

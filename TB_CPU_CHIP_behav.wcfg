@@ -10,13 +10,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="5,335.001 ns"></ZoomEndTime>
-      <Cursor1Time time="1,800.000 ns"></Cursor1Time>
+      <ZoomStartTime time="2,342.566 ns"></ZoomStartTime>
+      <ZoomEndTime time="3,419.567 ns"></ZoomEndTime>
+      <Cursor1Time time="3,400.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="336"></NameColumnWidth>
-      <ValueColumnWidth column_width="136"></ValueColumnWidth>
+      <ValueColumnWidth column_width="126"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="7" />
    <wvobject fp_name="/TB_CPU_CHIP/ISTR_PORT_sig" type="logic">
@@ -43,11 +43,12 @@
    <wvobject fp_name="/TB_CPU_CHIP/DUT/regs/regs" type="array">
       <obj_property name="ElementShortName">regs[31:0][31:0]</obj_property>
       <obj_property name="ObjectShortName">regs[31:0][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject fp_name="/TB_CPU_CHIP/DUT/ram/memory" type="array">
       <obj_property name="ElementShortName">memory[0:15][0:3][7:0]</obj_property>
       <obj_property name="ObjectShortName">memory[0:15][0:3][7:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <obj_property name="Reversed">false</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

@@ -47,6 +47,11 @@ architecture bram_arch of bram_memory is
     signal memory : memory_blocks := (others => (others => (others => '0')));
     signal b0, b1, b2, b3: std_logic_vector(7 downto 0) := (others => '0');
 begin
+    DATA_OUT <= b3 & b2 & b1 & b0;
+    b0 <= memory(to_integer(unsigned(ADDR(5 downto 2))))(0);
+    b1 <= memory(to_integer(unsigned(ADDR(5 downto 2))))(1);
+    b2 <= memory(to_integer(unsigned(ADDR(5 downto 2))))(2);
+    b3 <= memory(to_integer(unsigned(ADDR(5 downto 2))))(3);
     SYNC: process (CLK)
     begin
         if rising_edge(CLK) then
@@ -56,15 +61,8 @@ begin
                     memory(to_integer(unsigned(ADDR(5 downto 2))))(1) <= DATA_IN(15 downto 8);
                     memory(to_integer(unsigned(ADDR(5 downto 2))))(2) <= DATA_IN(23 downto 16);
                     memory(to_integer(unsigned(ADDR(5 downto 2))))(3) <= DATA_IN(31 downto 24);
-                else
-                    b0 <= memory(to_integer(unsigned(ADDR(5 downto 2))))(0);
-                    b1 <= memory(to_integer(unsigned(ADDR(5 downto 2))))(1);
-                    b2 <= memory(to_integer(unsigned(ADDR(5 downto 2))))(2);
-                    b3 <= memory(to_integer(unsigned(ADDR(5 downto 2))))(3);
                 end if;
             end if;
         end if;
     end process;
-    
-    DATA_OUT <= b3 & b2 & b1 & b0;
 end bram_arch;

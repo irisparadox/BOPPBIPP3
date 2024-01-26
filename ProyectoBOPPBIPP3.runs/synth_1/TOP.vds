@@ -3,8 +3,8 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Thu Jan 25 15:07:40 2024
-# Process ID: 18332
+# Start of session at: Fri Jan 26 00:23:19 2024
+# Process ID: 2832
 # Current directory: C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.runs/synth_1
 # Command line: vivado.exe -log TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
 # Log file: C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.runs/synth_1/TOP.vds
@@ -12,7 +12,7 @@
 # Running On: Nostromo, OS: Windows, CPU Frequency: 1797 MHz, CPU Physical cores: 16, Host memory: 16456 MB
 #-----------------------------------------------------------
 source TOP.tcl -notrace
-create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 436.168 ; gain = 163.730
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 438.078 ; gain = 164.812
 Command: read_checkpoint -auto_incremental -incremental {C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/utils_1/imports/synth_1/CPU_CHIP.dcp}
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/utils_1/imports/synth_1/CPU_CHIP.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -25,70 +25,70 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 10132
+INFO: [Synth 8-7075] Helper process launched with PID 20832
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1254.098 ; gain = 411.199
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1255.289 ; gain = 410.949
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'TOP' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/TOP.vhd:44]
 INFO: [Synth 8-3491] module 'CPU_CHIP' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:34' bound to instance 'CPU_CHIP_inst' of component 'CPU_CHIP' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/TOP.vhd:91]
 INFO: [Synth 8-638] synthesizing module 'CPU_CHIP' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:42]
-INFO: [Synth 8-3491] module 'program_counter' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/program_counter.vhd:34' bound to instance 'pc' of component 'program_counter' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:177]
+INFO: [Synth 8-3491] module 'program_counter' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/program_counter.vhd:34' bound to instance 'pc' of component 'program_counter' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:178]
 INFO: [Synth 8-638] synthesizing module 'program_counter' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/program_counter.vhd:42]
 INFO: [Synth 8-256] done synthesizing module 'program_counter' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/program_counter.vhd:42]
-INFO: [Synth 8-3491] module 'instruction_rom' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/instruction_rom.vhd:34' bound to instance 'ir' of component 'instruction_rom' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:186]
+INFO: [Synth 8-3491] module 'instruction_rom' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/instruction_rom.vhd:34' bound to instance 'ir' of component 'instruction_rom' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:187]
 INFO: [Synth 8-638] synthesizing module 'instruction_rom' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/instruction_rom.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'instruction_rom' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/instruction_rom.vhd:41]
 	Parameter n_bits bound to: 2 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwOP' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:195]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwOP' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:196]
 INFO: [Synth 8-638] synthesizing module 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:42]
 	Parameter n_bits bound to: 2 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'forwarding_unit' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:42]
 	Parameter n_bits bound to: 3 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwFUNCT' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:204]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwFUNCT' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:205]
 INFO: [Synth 8-638] synthesizing module 'forwarding_unit__parameterized1' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:42]
 	Parameter n_bits bound to: 3 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'forwarding_unit__parameterized1' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:42]
 	Parameter n_bits bound to: 9 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwPC' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:213]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwPC' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:214]
 INFO: [Synth 8-638] synthesizing module 'forwarding_unit__parameterized3' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:42]
 	Parameter n_bits bound to: 9 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'forwarding_unit__parameterized3' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:42]
 	Parameter n_bits bound to: 9 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwADDRA' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:222]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwADDRA' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:223]
 	Parameter n_bits bound to: 9 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwADDRB' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:231]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwADDRB' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:232]
 	Parameter n_bits bound to: 9 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwIMM' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:240]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwIMM' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:241]
 	Parameter n_bits bound to: 9 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwWADDRIF' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:249]
-INFO: [Synth 8-3491] module 'control_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/control_unit.vhd:34' bound to instance 'cu' of component 'control_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:260]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwWADDRIF' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:250]
+INFO: [Synth 8-3491] module 'control_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/control_unit.vhd:34' bound to instance 'cu' of component 'control_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:261]
 INFO: [Synth 8-638] synthesizing module 'control_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/control_unit.vhd:40]
 INFO: [Synth 8-256] done synthesizing module 'control_unit' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/control_unit.vhd:40]
-INFO: [Synth 8-3491] module 'dualr_bank' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/reg_bank.vhd:34' bound to instance 'regs' of component 'dualr_bank' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:267]
+INFO: [Synth 8-3491] module 'dualr_bank' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/reg_bank.vhd:34' bound to instance 'regs' of component 'dualr_bank' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:268]
 INFO: [Synth 8-638] synthesizing module 'dualr_bank' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/reg_bank.vhd:45]
 INFO: [Synth 8-256] done synthesizing module 'dualr_bank' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/reg_bank.vhd:45]
-INFO: [Synth 8-3491] module 'imm_gen' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/imm_gen.vhd:34' bound to instance 'immgen' of component 'imm_gen' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:279]
+INFO: [Synth 8-3491] module 'imm_gen' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/imm_gen.vhd:34' bound to instance 'immgen' of component 'imm_gen' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:280]
 INFO: [Synth 8-638] synthesizing module 'imm_gen' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/imm_gen.vhd:39]
 INFO: [Synth 8-256] done synthesizing module 'imm_gen' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/imm_gen.vhd:39]
 	Parameter n_bits bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwCU_CONTROL' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:286]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwCU_CONTROL' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:287]
 INFO: [Synth 8-638] synthesizing module 'forwarding_unit__parameterized5' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:42]
 	Parameter n_bits bound to: 8 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'forwarding_unit__parameterized5' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:42]
 	Parameter n_bits bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwREGSA' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:296]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwREGSA' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:297]
 INFO: [Synth 8-638] synthesizing module 'forwarding_unit__parameterized7' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:42]
 	Parameter n_bits bound to: 32 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'forwarding_unit__parameterized7' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:42]
 	Parameter n_bits bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwREGSB' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:305]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwREGSB' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:306]
 	Parameter n_bits bound to: 9 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwWADDRID' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:315]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwWADDRID' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:316]
 	Parameter n_bits bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwIMMGENERATOR' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:325]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwIMMGENERATOR' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:326]
 	Parameter n_bits bound to: 9 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwPCTOEX' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:334]
-INFO: [Synth 8-3491] module 'ALU' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/ALU.vhd:34' bound to instance 'core' of component 'ALU' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:355]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwPCTOEX' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:335]
+INFO: [Synth 8-3491] module 'ALU' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/ALU.vhd:34' bound to instance 'core' of component 'ALU' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:361]
 INFO: [Synth 8-638] synthesizing module 'ALU' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/ALU.vhd:43]
 INFO: [Synth 8-3491] module 'adder_sub' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/adder_sub.vhd:35' bound to instance 'coreadder' of component 'adder_sub' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/ALU.vhd:78]
 INFO: [Synth 8-638] synthesizing module 'adder_sub' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/adder_sub.vhd:43]
@@ -98,26 +98,26 @@ INFO: [Synth 8-638] synthesizing module 'barrel_shifter' [C:/Users/gabri/Documen
 INFO: [Synth 8-256] done synthesizing module 'barrel_shifter' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/barrel_shifter.vhd:43]
 INFO: [Synth 8-256] done synthesizing module 'ALU' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/ALU.vhd:43]
 	Parameter n_bits bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwCUEX' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:366]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwCUEX' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:372]
 	Parameter n_bits bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwALUO' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:376]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwALUO' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:382]
 	Parameter n_bits bound to: 2 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwALUFLAGS' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:385]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwALUFLAGS' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:391]
 	Parameter n_bits bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwBOUT' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:394]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwBOUT' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:400]
 	Parameter n_bits bound to: 9 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwWADDREX' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:404]
-INFO: [Synth 8-3491] module 'bram_memory' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/bram_memory.vhd:34' bound to instance 'ram' of component 'bram_memory' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:417]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwWADDREX' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:410]
+INFO: [Synth 8-3491] module 'bram_memory' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/bram_memory.vhd:34' bound to instance 'ram' of component 'bram_memory' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:423]
 INFO: [Synth 8-638] synthesizing module 'bram_memory' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/bram_memory.vhd:43]
 INFO: [Synth 8-256] done synthesizing module 'bram_memory' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/bram_memory.vhd:43]
 	Parameter n_bits bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwMEM' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:427]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwMEM' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:433]
 	Parameter n_bits bound to: 8 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwCONTROLMEM' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:436]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwCONTROLMEM' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:442]
 	Parameter n_bits bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwALUMEM' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:445]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwALUMEM' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:451]
 	Parameter n_bits bound to: 9 - type: integer 
-INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwWADDRMEM' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:455]
+INFO: [Synth 8-3491] module 'forwarding_unit' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/forwarding_unit.vhd:34' bound to instance 'fwWADDRMEM' of component 'forwarding_unit' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:461]
 INFO: [Synth 8-256] done synthesizing module 'CPU_CHIP' (0#1) [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/CPU_CHIP.vhd:42]
 INFO: [Synth 8-3491] module 'displays' declared at 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/displays.vhd:7' bound to instance 'displays_inst' of component 'displays' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/TOP.vhd:100]
 INFO: [Synth 8-638] synthesizing module 'displays' [C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.srcs/sources_1/new/displays.vhd:19]
@@ -138,18 +138,18 @@ INFO: [Synth 8-256] done synthesizing module 'TOP' (0#1) [C:/Users/gabri/Documen
 WARNING: [Synth 8-7129] Port ADDR[1] in module bram_memory is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ADDR[0] in module bram_memory is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1365.855 ; gain = 522.957
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 1367.680 ; gain = 523.340
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1365.855 ; gain = 522.957
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 1367.680 ; gain = 523.340
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1365.855 ; gain = 522.957
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 1367.680 ; gain = 523.340
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 1365.855 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1367.680 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -160,28 +160,28 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/TOP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1449.316 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1472.855 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1449.316 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1472.855 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:22 . Memory (MB): peak = 1449.316 ; gain = 606.418
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:25 . Memory (MB): peak = 1472.855 ; gain = 628.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:22 . Memory (MB): peak = 1449.316 ; gain = 606.418
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:25 . Memory (MB): peak = 1472.855 ; gain = 628.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:22 . Memory (MB): peak = 1449.316 ; gain = 606.418
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:25 . Memory (MB): peak = 1472.855 ; gain = 628.516
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'controller.state_reg' in module 'debouncer'
 ---------------------------------------------------------------------------------------------------
@@ -194,7 +194,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'controller.state_reg' in mo
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'controller.state_reg' using encoding 'sequential' in module 'debouncer'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:23 . Memory (MB): peak = 1449.316 ; gain = 606.418
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:27 . Memory (MB): peak = 1472.855 ; gain = 628.516
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'CPU_CHIP_inst/fwADDRB' (forwarding_unit__parameterized3) to 'CPU_CHIP_inst/fwIMM'
 ---------------------------------------------------------------------------------
@@ -211,13 +211,13 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 8     
 	               26 Bit    Registers := 1     
 	                9 Bit    Registers := 9     
-	                8 Bit    Registers := 71    
+	                8 Bit    Registers := 67    
 	                3 Bit    Registers := 1     
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 3     
 +---Muxes : 
 	  64 Input   32 Bit        Muxes := 1     
-	   2 Input   32 Bit        Muxes := 4     
+	   2 Input   32 Bit        Muxes := 5     
 	  32 Input   32 Bit        Muxes := 2     
 	   4 Input   32 Bit        Muxes := 1     
 	   2 Input   26 Bit        Muxes := 1     
@@ -257,7 +257,7 @@ WARNING: [Synth 8-7129] Port ADDR[1] in module bram_memory is either unconnected
 WARNING: [Synth 8-7129] Port ADDR[0] in module bram_memory is either unconnected or has no load
 INFO: [Synth 8-3971] The signal "TOP/CPU_CHIP_inst/regs/regs_reg" was recognized as a true dual port RAM template.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:29 . Memory (MB): peak = 1449.316 ; gain = 606.418
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:36 . Memory (MB): peak = 1472.855 ; gain = 628.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -273,13 +273,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:36 . Memory (MB): peak = 1449.316 ; gain = 606.418
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:44 . Memory (MB): peak = 1472.855 ; gain = 628.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:37 . Memory (MB): peak = 1449.316 ; gain = 606.418
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:48 . Memory (MB): peak = 1472.855 ; gain = 628.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -296,7 +296,7 @@ Start Technology Mapping
 INFO: [Synth 8-7052] The timing for the instance CPU_CHIP_inst/regs/regs_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance CPU_CHIP_inst/regs/regs_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:37 . Memory (MB): peak = 1449.316 ; gain = 606.418
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:49 . Memory (MB): peak = 1472.855 ; gain = 628.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -314,37 +314,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:45 . Memory (MB): peak = 1449.316 ; gain = 606.418
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:56 . Memory (MB): peak = 1472.855 ; gain = 628.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:45 . Memory (MB): peak = 1449.316 ; gain = 606.418
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:56 . Memory (MB): peak = 1472.855 ; gain = 628.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:45 . Memory (MB): peak = 1449.316 ; gain = 606.418
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:56 . Memory (MB): peak = 1472.855 ; gain = 628.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:45 . Memory (MB): peak = 1449.316 ; gain = 606.418
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:56 . Memory (MB): peak = 1472.855 ; gain = 628.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:45 . Memory (MB): peak = 1449.316 ; gain = 606.418
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:56 . Memory (MB): peak = 1472.855 ; gain = 628.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:45 . Memory (MB): peak = 1449.316 ; gain = 606.418
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:56 . Memory (MB): peak = 1472.855 ; gain = 628.516
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -354,9 +354,8 @@ Static Shift Register Report:
 +------------+-----------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 |Module Name | RTL Name                                | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
 +------------+-----------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|TOP         | CPU_CHIP_inst/fwCONTROLMEM/aux_reg[7]   | 3      | 2     | NO           | NO                 | YES               | 2      | 0       | 
-|TOP         | CPU_CHIP_inst/fwWADDRMEM/aux_reg[4]     | 5      | 2     | NO           | NO                 | YES               | 2      | 0       | 
-|TOP         | CPU_CHIP_inst/fwWADDRMEM/aux_reg[1]     | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|TOP         | CPU_CHIP_inst/fwCONTROLMEM/aux_reg[4]   | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|TOP         | CPU_CHIP_inst/fwWADDRMEM/aux_reg[4]     | 5      | 4     | NO           | NO                 | YES               | 4      | 0       | 
 |TOP         | CPU_CHIP_inst/fwIMMGENERATOR/aux_reg[8] | 3      | 2     | NO           | NO                 | YES               | 2      | 0       | 
 +------------+-----------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
 
@@ -380,42 +379,42 @@ Report Cell Usage:
 |1     |BUFG     |     1|
 |2     |CARRY4   |    25|
 |3     |LUT1     |     2|
-|4     |LUT2     |    56|
-|5     |LUT3     |    80|
-|6     |LUT4     |    35|
-|7     |LUT5     |    38|
-|8     |LUT6     |   208|
-|9     |MUXF7    |    64|
+|4     |LUT2     |    58|
+|5     |LUT3     |    78|
+|6     |LUT4     |    64|
+|7     |LUT5     |    84|
+|8     |LUT6     |   510|
+|9     |MUXF7    |    84|
 |10    |MUXF8    |    32|
 |11    |RAMB18E1 |     2|
 |12    |SRL16E   |     7|
 |13    |FDCE     |    41|
 |14    |FDPE     |    10|
-|15    |FDRE     |   735|
+|15    |FDRE     |   710|
 |16    |IBUF     |     3|
 |17    |OBUF     |    27|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:45 . Memory (MB): peak = 1449.316 ; gain = 606.418
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:56 . Memory (MB): peak = 1472.855 ; gain = 628.516
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:42 . Memory (MB): peak = 1449.316 ; gain = 522.957
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:45 . Memory (MB): peak = 1449.316 ; gain = 606.418
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:53 . Memory (MB): peak = 1472.855 ; gain = 523.340
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:56 . Memory (MB): peak = 1472.855 ; gain = 628.516
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1449.316 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 123 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1472.855 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 143 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1449.316 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1474.918 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 885fdc67
+Synth Design complete | Checksum: 4077a721
 INFO: [Common 17-83] Releasing license: Synthesis
 107 Infos, 11 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:52 . Memory (MB): peak = 1449.316 ; gain = 988.289
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:01:13 . Memory (MB): peak = 1474.918 ; gain = 1011.723
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gabri/Documents/Vivado Projects/ProyectoBOPPBIPP3/ProyectoBOPPBIPP3.runs/synth_1/TOP.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Jan 25 15:08:43 2024...
+INFO: [Common 17-206] Exiting Vivado at Fri Jan 26 00:24:43 2024...

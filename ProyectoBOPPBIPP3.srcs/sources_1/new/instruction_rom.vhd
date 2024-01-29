@@ -60,7 +60,7 @@ begin
     -- 3 : addi t3, t2, 4       [0x40401E04]
     -- 4 : sw t3, zero          [0x98002000]
     -- 5 : lw t4, zero          [0x90440000]
-    -- 6 : li sp, 64            [0x807C001F]
+    -- 6 : li sp, 63            [0x807C001F]
     -- 7 : addi sp, sp, -4      [0x407C01FC]
     -- 8 : li r1, 4             [0x80040002]
     -- 9 : sw r1, sp            [0x9800041F]
